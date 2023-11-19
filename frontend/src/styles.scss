@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+$widthMobile: 320px;
+$widthpTablet: 768px;
+
+$heightHeader: 60px;
+$paddingValue: 20px;
+$borderRadiusValue: 10px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+mat-icon {
+  font-family: "Material Icons" !important;
+}
+
+body,
+app-root {
+  width: 100%;
+}
+
+body {
+  position: absolute;
+}
+
+app-root {
+  display: inherit;
+}

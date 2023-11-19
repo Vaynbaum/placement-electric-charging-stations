@@ -1,0 +1,20 @@
+  <mat-form-field>
+    <mat-label>{{cityInput.label}}</mat-label>
+    <input
+      type="text"
+      (keydown)="onKeydown($event)"
+      (keyup)="onKeyup(cityInput)"
+      [placeholder]="cityInput.placeholder"
+      matInput
+      [formControl]="cityControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <ng-container *ngFor="let city of cityInput.values | async">
+        <mat-option [value]="city.name"  (click)="selectCity(city)">
+          <span>{{city.name}}</span>
+          <small *ngIf="city.region"> ({{city.region.name}})</small>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+    <mat-icon matSuffix>location_city</mat-icon>
+  </mat-form-field>

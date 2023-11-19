@@ -1,0 +1,13 @@
+@import "../styles.scss";
+
+app-header {
+  top: 0;
+  position: fixed;
+  z-index: 2;
+}
+
+main {
+  margin-top: $heightHeader;
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,47 @@
+@import "../../styles.scss";
+
+$widthSidenav: 260px;
+$widthContainerMapMobile: 395px;
+$widthContainerMapPC: 490px;
+$heightSidenavContainer: 85vh;
+
+mat-sidenav-container {
+  min-height: $heightSidenavContainer;
+}
+mat-sidenav {
+  width: $widthSidenav;
+  padding: $paddingValue;
+}
+mat-sidenav-content {
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+}
+
+mat-sidenav-content,
+.menu {
+  display: flex;
+}
+
+.menu,
+.container-map {
+  width: 100%;
+}
+
+
+.container-map {
+  padding: $paddingValue;
+  border-radius: $borderRadiusValue;
+}
+
+@media (min-width: $widthMobile) {
+  .container-map {
+    height: $widthContainerMapMobile;
+  }
+}
+
+@media (min-width: $widthpTablet) {
+  .container-map {
+    height: $widthContainerMapPC;
+  }
+}

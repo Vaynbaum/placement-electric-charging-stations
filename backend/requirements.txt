@@ -1,0 +1,9 @@
+fastapi[all]
+gunicorn
+python-dotenv
+requests
+python-multipart
+fastapi-cache2[redis]
+geoalchemy2
+shapely
+geodaisy
