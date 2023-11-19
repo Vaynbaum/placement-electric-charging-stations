@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() { }
   drawerColor(flag: boolean) {
     if (flag) {
-      return { color: "#9400d3" };
+      return { 'background-color': 'rgb(81,45,144)', 'border-radius': '10px'};
     }
     return {};
   }
