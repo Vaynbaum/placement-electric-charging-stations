@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ],
   exports: [
     FormsModule,
@@ -42,7 +44,8 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
+    MatCardModule
   ],
   declarations: [SidenavMapComponent, HeaderComponent],
 })
-export class SharedModule {}
+export class SharedModule { }

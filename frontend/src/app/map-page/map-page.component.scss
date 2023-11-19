@@ -7,6 +7,7 @@ $heightSidenavContainer: 85vh;
 
 mat-sidenav-container {
   min-height: $heightSidenavContainer;
+  background-color: white;
 }
 mat-sidenav {
   width: $widthSidenav;
