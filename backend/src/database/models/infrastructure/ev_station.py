@@ -1,4 +1,4 @@
-from sqlalchemy import JSON, Boolean, Float, String, Integer, Text, Column, ForeignKey
+from sqlalchemy import JSON, String, Integer, Column, ForeignKey
 from sqlalchemy.orm import relationship
 from geoalchemy2 import Geography
 

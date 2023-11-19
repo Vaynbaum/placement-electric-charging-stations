@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <ng-container *ngFor="let link of links">
-    <span class="spacer" *ngIf="link.link == 'about-us'"></span>
-    <a routerLinkActive #rla="routerLinkActive" [ngStyle]="drawerColor(rla.isActive)" [routerLink]="['',link.link]">
+    <a routerLinkActive #rla="routerLinkActive"
+      [ngStyle]="drawerColor(rla.isActive)" [routerLink]="['',link.link]">
       <button mat-button>
         <mat-icon>{{link.icon}}</mat-icon>
         <span>
@@ -10,7 +10,4 @@
       </button>
     </a>
   </ng-container>
-
-
-
 </mat-toolbar>

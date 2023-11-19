@@ -1,5 +1,6 @@
 # from src.authentication.router import router as authentication_router
 from src.geo.router import router as geo_router
+from src.infrastructure.router import router as infrastructure_router
 
 # from src.tag.router import router as tag_router
 # from src.store.router import router as store_router
@@ -7,7 +8,8 @@ from src.geo.router import router as geo_router
 # from src.task.router import router as ai_router
 
 Routers = [
-    geo_router
+    geo_router,
+    infrastructure_router
     # authentication_router,
     # tag_router,
     # file_operator_router,

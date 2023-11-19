@@ -6,9 +6,9 @@ mat-toolbar {
   height: $heightHeader;
   position: fixed;
 
-  .spacer {
-    flex: 1 1 auto;
-  }
+  display: flex;
+  justify-content: space-between;
+
   a{
     color: white
   }

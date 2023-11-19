@@ -1,20 +1,20 @@
 <mat-sidenav-container [hasBackdrop]="selectBackdrop()">
   <mat-sidenav #sidenav [disableClose]="!this.settings.isMobile" [mode]="selectModeSidenav()"
     [opened]="!this.settings.isMobile">
-    <app-sidenav-map (selectedCity)="handleSelectCity($event)"></app-sidenav-map>
+    <app-sidenav-map (selectedCity)="handleSelectCity($event)" (getEVs)="handleGetEVs($event)"></app-sidenav-map>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div class="menu">
+    <div class=" menu">
       <button mat-button *ngIf="this.settings.isMobile" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
     <div class="container-map">
       <ya-map #map [center]="position.center" [zoom]="12" [state]="{controls: []}" (ready)="onMapReady($event)">
-        <!-- <ya-placemark [geometry]=" [55.751952, 37.600739]">
+        <!-- <ya-placemark *ngFor="let placemark of placemarks" [geometry]="placemark.geometry"
+          [properties]="placemark.properties" [options]="placemark.options">
         </ya-placemark> -->
-        <!-- <ya-geoobject *ngIf="borderCity" [feature]="borderCity" [options]="borderOptions" (ready)="onReady($event)"></ya-geoobject> -->
       </ya-map>
     </div>
 

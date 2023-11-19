@@ -13,28 +13,15 @@ const URL = `${environment.DB_URL}/geo`;
 export class GeoService {
   constructor(private http: HttpClient) {}
 
-  addFirstSymbQuery(config: any) {
-    if (!config.flag) {
-      config.url += '?';
-      config.flag = true;
-    }
-    return config;
-  }
-
-  addQueryParams(config: any, params: any, nameParams: string) {
-    if (params) {
-      this.addFirstSymbQuery(config);
-      config.url += `${nameParams}=${params}&`;
-    }
-  }
-
   GetAllCities(
     is_top?: boolean,
     substr?: string
   ): Observable<ResponseItems<FullCity>> {
-    let config = { url: `${URL}/cities/all`, flag: false };
-    this.addQueryParams(config, is_top, 'is_top');
-    this.addQueryParams(config, substr, 'substr');
-    return this.http.get<ResponseItems<FullCity>>(config.url);
+    let params: any = {};
+    if (is_top) params.is_top = is_top;
+    if (substr) params.substr = substr;
+    return this.http.get<ResponseItems<FullCity>>(`${URL}/cities/all`, {
+      params: { ...params },
+    });
   }
 }

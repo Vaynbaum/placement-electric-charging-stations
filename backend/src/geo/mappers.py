@@ -1,6 +1,3 @@
-import json
-import geodaisy.converters as convert
-import json
 from shapely.geometry import shape
 from shapely.wkb import loads
 
@@ -25,10 +22,6 @@ class RegionMapper(SimpleMapper[RegionSchema]):
 
     def create_from_database(self, region) -> RegionSchema:
         region_procced = super().create_from_database(region)
-        region_procced.center = json.loads(
-            convert.wkt_to_geojson(region.location.wkt.data)
-        )
-        region_procced.border = json.loads(
-            convert.wkt_to_geojson(region.geometry.wkt.data)
-        )
+        region_procced.center = shape(loads(region.location.data)).__geo_interface__
+        region_procced.border = shape(loads(region.geometry.data)).__geo_interface__
         return region_procced
