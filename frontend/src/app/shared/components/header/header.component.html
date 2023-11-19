@@ -1,17 +1,15 @@
 <mat-toolbar color="primary">
-  <button mat-button>
-    <mat-icon>ev_station</mat-icon>
-    <span>Карта</span>
-  </button>
+  <ng-container *ngFor="let link of links">
+    <span class="spacer" *ngIf="link.link == 'about-us'"></span>
+    <button mat-button>
+      <mat-icon>{{link.icon}}</mat-icon>
+      <span><a routerLinkActive #rla="routerLinkActive" [ngStyle]="drawerColor(rla.isActive)"
+          [routerLink]="['',link.link]">
+          {{link.title}}
+        </a></span>
+    </button>
+  </ng-container>
 
-  <button mat-button>
-    <mat-icon>settings</mat-icon>
-    <span>Модель</span>
-  </button>
+  
 
-  <span class="spacer"></span>
-
-  <button mat-button>
-    <mat-icon>groups</mat-icon> О нас
-  </button>
 </mat-toolbar>
