@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
     RouterModule
   ],
   exports: [
@@ -39,6 +41,7 @@ import { RouterModule } from '@angular/router';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
   ],
   declarations: [SidenavMapComponent, HeaderComponent],
 })

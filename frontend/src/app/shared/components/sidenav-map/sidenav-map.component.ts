@@ -29,6 +29,15 @@ export class SidenavMapComponent {
 
   constructor(private geoService: GeoService) {}
 
+  slides = [
+    {
+      name: 'Отображать заправки',
+    },
+    {
+      name: 'Отображать парковки',
+    },
+  ];
+
   addCitiesToInput(items: FullCity[]) {
     this.cityInput.items = items;
     this.cityInput.label = SELECT_CITY;

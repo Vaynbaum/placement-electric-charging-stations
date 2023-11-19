@@ -18,3 +18,10 @@
     </mat-autocomplete>
     <mat-icon matSuffix>location_city</mat-icon>
   </mat-form-field>
+
+  <div class="config-map">
+    <mat-slide-toggle *ngFor="let slide of slides" ngModel name="enableWifi">
+      {{slide.name}}
+    </mat-slide-toggle>
+  </div>
+
