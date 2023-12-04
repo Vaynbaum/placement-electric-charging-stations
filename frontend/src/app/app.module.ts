@@ -11,16 +11,14 @@ import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
 import { environment } from 'src/environments/environment';
 import { GeoService } from './shared/services/geo.service';
 import { ModelPageComponent } from './model-page/model-page.component';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { InfrastructureService } from './shared/services/infrastructure.service';
 
 const mapConfig: YaConfig = {
   apikey: environment.API_KEY,
   lang: 'ru_RU',
 };
 @NgModule({
-  declarations: [AppComponent, MapPageComponent, ModelPageComponent, AboutUsPageComponent],
+  declarations: [AppComponent, MapPageComponent, ModelPageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,7 +26,7 @@ const mapConfig: YaConfig = {
     AngularYandexMapsModule.forRoot(mapConfig),
     AppRoutingModule,
   ],
-  providers: [SettingsService, GeoService],
+  providers: [SettingsService, GeoService, InfrastructureService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

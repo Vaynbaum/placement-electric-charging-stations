@@ -5,6 +5,7 @@ import { FullCity } from '../../models/city.model';
 import { SelectInput } from '../../models/input.model';
 import { ResponseItems } from '../../models/response.model';
 import { GeoService } from '../../services/geo.service';
+import { InfrastructureService } from '../../services/infrastructure.service';
 
 const LOADING_CITY = 'Загрузка городов...';
 const SELECT_CITY = 'Выберите город';
@@ -17,8 +18,10 @@ const MIN_LENGTH_SUBSTR = 2;
 })
 export class SidenavMapComponent {
   cityControl = new FormControl('');
+  currentCity: any = null;
 
   @Output() selectedCity = new EventEmitter<any>();
+  @Output() getEVs = new EventEmitter<any>();
   cityInput: SelectInput = {
     type: 'text',
     label: LOADING_CITY,
@@ -27,16 +30,35 @@ export class SidenavMapComponent {
     placeholder: 'Введите название',
   };
 
-  constructor(private geoService: GeoService) {}
+  constructor(
+    private geoService: GeoService,
+    private infrastructureService: InfrastructureService
+  ) {}
 
-  slides = [
-    {
-      name: 'Отображать заправки',
-    },
-    {
-      name: 'Отображать парковки',
-    },
-  ];
+  toggleEV = {
+    flag: false,
+    name: 'Отображать заправки',
+  };
+  toggleParking = {
+    flag: false,
+    name: 'Отображать парковки',
+  };
+
+  executeAction(slide: any) {
+    slide.action(slide);
+  }
+
+  getExistEVs(slide: any) {
+    if (this.currentCity) {
+      if (slide.flag) {
+        this.infrastructureService
+          .GetAllEVStations(this.currentCity.id)
+          .subscribe((evs) => this.getEVs.emit(evs.items));
+      } else {
+        this.getEVs.emit(null);
+      }
+    }
+  }
 
   addCitiesToInput(items: FullCity[]) {
     this.cityInput.items = items;
@@ -78,7 +100,16 @@ export class SidenavMapComponent {
   }
 
   selectCity(city: FullCity) {
-    this.selectedCity.emit(city);
+    if (
+      city &&
+      ((this.currentCity && city.name != this.currentCity.name) ||
+        !this.currentCity)
+    ) {
+      this.currentCity = city;
+      this.toggleEV.flag=false;
+      this.toggleParking.flag=false;
+      this.selectedCity.emit(city);
+    }
   }
 
   onKeyup(input: SelectInput) {

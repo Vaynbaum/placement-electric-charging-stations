@@ -3,10 +3,12 @@ from typing import Callable
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.geo.repositories import *
+from src.infrastructure.repositories import *
 
 
 class IUnitOfWork(ABC):
     cities: ICityRepository
+    ev_chargers: IEVStationRepository
 
     @abstractmethod
     async def __aenter__(self):
@@ -32,6 +34,8 @@ class UnitOfWork(IUnitOfWork):
     async def __aenter__(self):
         self.__session: AsyncSession = self.__session_maker()
         self.cities = CityRepository(self.__session)
+        self.ev_chargers = EVStationRepository(self.__session)
+
         return await super().__aenter__()
 
     async def __aexit__(self, *args):
