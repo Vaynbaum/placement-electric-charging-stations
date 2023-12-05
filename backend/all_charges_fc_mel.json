@@ -1,0 +1,323 @@
+[{
+    "cost": null,
+    "location": {
+        "lat": 46.8473033,
+        "lon": 35.3673983
+    },
+    "address": {
+        "Title": "3019 ТЦ АМСТОР",
+        "AddressLine1": "Interkulturna Street, 79",
+        "Latitude": 46.8473033,
+        "Longitude": 35.3673983
+    },
+    "operator": {
+        "WebsiteURL": "https://www.autoenterprise.com.ua/",
+        "Comments": null,
+        "PhonePrimaryContact": null,
+        "PhoneSecondaryContact": null,
+        "IsPrivateIndividual": false,
+        "AddressInfo": null,
+        "BookingURL": null,
+        "ContactEmail": null,
+        "FaultReportEmail": null,
+        "IsRestrictedEdit": false,
+        "ID": 3362,
+        "Title": "Autoenterprise / АвтоЭнтерпрайз"
+    },
+    "data_provider": {
+        "WebsiteURL": "http://openchargemap.org",
+        "Comments": null,
+        "DataProviderStatusType": {
+            "IsProviderEnabled": true,
+            "ID": 1,
+            "Title": "Manual Data Entry"
+        },
+        "IsRestrictedEdit": false,
+        "IsOpenDataLicensed": true,
+        "IsApprovedImport": true,
+        "License": "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "DateLastImported": null,
+        "ID": 1,
+        "Title": "Open Charge Map Contributors"
+    },
+    "usage_type": {
+        "IsPayAtLocation": false,
+        "IsMembershipRequired": true,
+        "IsAccessKeyRequired": true,
+        "ID": 4,
+        "Title": "Требуется публичное членство"
+    },
+    "status_type": {
+        "IsOperational": true,
+        "IsUserSelectable": true,
+        "ID": 50,
+        "Title": "Оперативный"
+    },
+    "submission_status_type": {
+        "IsLive": true,
+        "ID": 200,
+        "Title": "Submission Published"
+    },
+    "external_id": {
+        "id": 172672,
+        "uuid": "87E87E6C-266A-40A3-A269-81609F927CB7"
+    },
+    "number_points": 1,
+    "connections": [{
+        "quantity": 1,
+        "current_type": {
+            "Description": "Постоянный ток",
+            "ID": 30,
+            "Title": "DC"
+        },
+        "power_kw": 20,
+        "charger_type": {
+            "Comments": "40 кВт и выше",
+            "IsFastChargeCapable": true,
+            "ID": 3,
+            "Title": "Уровень 3: Высокий (более 40 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration AA",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 2,
+            "Title": "CHAdeMO"
+        }
+    }, {
+        "quantity": null,
+        "current_type": {
+            "Description": "Постоянный ток",
+            "ID": 30,
+            "Title": "DC"
+        },
+        "power_kw": 20,
+        "charger_type": {
+            "Comments": "40 кВт и выше",
+            "IsFastChargeCapable": true,
+            "ID": 3,
+            "Title": "Уровень 3: Высокий (более 40 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration FF",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 33,
+            "Title": "CCS (Type 2)"
+        }
+    }, {
+        "quantity": null,
+        "current_type": {
+            "Description": "Переменный ток - однофазный",
+            "ID": 10,
+            "Title": "AC (Однофазный)"
+        },
+        "power_kw": null,
+        "charger_type": null,
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "SAE J1772-2009",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 1,
+            "Title": "Type 1 (J1772)"
+        }
+    }, {
+        "quantity": null,
+        "current_type": null,
+        "power_kw": null,
+        "charger_type": null,
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-2",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 1036,
+            "Title": "Type 2 (Tethered Connector) "
+        }
+    }]
+}, {
+    "cost": null,
+    "location": {
+        "lat": 46.89165584907164,
+        "lon": 35.376358782371994
+    },
+    "address": {
+        "Title": "2961 АЗС WOG",
+        "AddressLine1": "Ломоносова",
+        "Town": "Melitopol",
+        "StateOrProvince": "Zaporizhia Oblast",
+        "Postcode": "72300-72324",
+        "Latitude": 46.89165584907164,
+        "Longitude": 35.376358782371994,
+        "RelatedURL": "https://charge.autoenterprise.com.ua/"
+    },
+    "operator": {
+        "WebsiteURL": "https://www.autoenterprise.com.ua/",
+        "Comments": null,
+        "PhonePrimaryContact": null,
+        "PhoneSecondaryContact": null,
+        "IsPrivateIndividual": false,
+        "AddressInfo": null,
+        "BookingURL": null,
+        "ContactEmail": null,
+        "FaultReportEmail": null,
+        "IsRestrictedEdit": false,
+        "ID": 3362,
+        "Title": "Autoenterprise / АвтоЭнтерпрайз"
+    },
+    "data_provider": {
+        "WebsiteURL": "http://openchargemap.org",
+        "Comments": null,
+        "DataProviderStatusType": {
+            "IsProviderEnabled": true,
+            "ID": 1,
+            "Title": "Manual Data Entry"
+        },
+        "IsRestrictedEdit": false,
+        "IsOpenDataLicensed": true,
+        "IsApprovedImport": true,
+        "License": "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "DateLastImported": null,
+        "ID": 1,
+        "Title": "Open Charge Map Contributors"
+    },
+    "usage_type": {
+        "IsPayAtLocation": false,
+        "IsMembershipRequired": true,
+        "IsAccessKeyRequired": true,
+        "ID": 4,
+        "Title": "Требуется публичное членство"
+    },
+    "status_type": {
+        "IsOperational": true,
+        "IsUserSelectable": true,
+        "ID": 50,
+        "Title": "Оперативный"
+    },
+    "submission_status_type": {
+        "IsLive": true,
+        "ID": 200,
+        "Title": "Submission Published"
+    },
+    "external_id": {
+        "id": 172671,
+        "uuid": "744A0791-8428-4887-90DD-A7D95DB49B58"
+    },
+    "number_points": 1,
+    "connections": [{
+        "quantity": 1,
+        "current_type": null,
+        "power_kw": 40,
+        "charger_type": {
+            "Comments": "Более 2 кВт, обычно розетки не бытового типа",
+            "IsFastChargeCapable": false,
+            "ID": 2,
+            "Title": "Уровень 2: Средний (более 2 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration AA",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 2,
+            "Title": "CHAdeMO"
+        }
+    }, {
+        "quantity": null,
+        "current_type": null,
+        "power_kw": 40,
+        "charger_type": {
+            "Comments": "Более 2 кВт, обычно розетки не бытового типа",
+            "IsFastChargeCapable": false,
+            "ID": 2,
+            "Title": "Уровень 2: Средний (более 2 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration FF",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 33,
+            "Title": "CCS (Type 2)"
+        }
+    }, {
+        "quantity": null,
+        "current_type": null,
+        "power_kw": 9,
+        "charger_type": {
+            "Comments": "Более 2 кВт, обычно розетки не бытового типа",
+            "IsFastChargeCapable": false,
+            "ID": 2,
+            "Title": "Уровень 2: Средний (более 2 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "SAE J1772-2009",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 1,
+            "Title": "Type 1 (J1772)"
+        }
+    }, {
+        "quantity": null,
+        "current_type": null,
+        "power_kw": 22,
+        "charger_type": {
+            "Comments": "Более 2 кВт, обычно розетки не бытового типа",
+            "IsFastChargeCapable": false,
+            "ID": 2,
+            "Title": "Уровень 2: Средний (более 2 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-2",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 1036,
+            "Title": "Type 2 (Tethered Connector) "
+        }
+    }]
+}]

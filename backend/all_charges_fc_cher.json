@@ -1,0 +1,151 @@
+[{
+    "cost": "14 р/кВт*ч",
+    "location": {
+        "lat": 45.49678214349742,
+        "lon": 32.7199273716888
+    },
+    "address": {
+        "Title": "ATAN 7",
+        "AddressLine1": "Черноморское сельское поселение",
+        "StateOrProvince": "Крым",
+        "Latitude": 45.49678214349742,
+        "Longitude": 32.7199273716888,
+        "ContactTelephone1": "89780162216",
+        "RelatedURL": "https://driveenergychargers.com"
+    },
+    "operator": {
+        "WebsiteURL": "https://driveenergychargers.com",
+        "Comments": null,
+        "PhonePrimaryContact": "+79780162216",
+        "PhoneSecondaryContact": null,
+        "IsPrivateIndividual": false,
+        "AddressInfo": null,
+        "BookingURL": null,
+        "ContactEmail": null,
+        "FaultReportEmail": null,
+        "IsRestrictedEdit": false,
+        "ID": 3674,
+        "Title": "DriveEnergy (RU)"
+    },
+    "data_provider": {
+        "WebsiteURL": "http://openchargemap.org",
+        "Comments": null,
+        "DataProviderStatusType": {
+            "IsProviderEnabled": true,
+            "ID": 1,
+            "Title": "Manual Data Entry"
+        },
+        "IsRestrictedEdit": false,
+        "IsOpenDataLicensed": true,
+        "IsApprovedImport": true,
+        "License": "Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "DateLastImported": null,
+        "ID": 1,
+        "Title": "Open Charge Map Contributors"
+    },
+    "usage_type": {
+        "IsPayAtLocation": true,
+        "IsMembershipRequired": false,
+        "IsAccessKeyRequired": false,
+        "ID": 5,
+        "Title": "Общественный - Оплачивается на месте"
+    },
+    "status_type": {
+        "IsOperational": true,
+        "IsUserSelectable": true,
+        "ID": 50,
+        "Title": "Оперативный"
+    },
+    "submission_status_type": {
+        "IsLive": true,
+        "ID": 200,
+        "Title": "Submission Published"
+    },
+    "external_id": {
+        "id": 256516,
+        "uuid": "EA7EF8F2-272A-43D8-B934-DEE2B304E252"
+    },
+    "number_points": 1,
+    "connections": [{
+        "quantity": 1,
+        "current_type": {
+            "Description": "Постоянный ток",
+            "ID": 30,
+            "Title": "DC"
+        },
+        "power_kw": 150,
+        "charger_type": {
+            "Comments": "40 кВт и выше",
+            "IsFastChargeCapable": true,
+            "ID": 3,
+            "Title": "Уровень 3: Высокий (более 40 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration FF",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 33,
+            "Title": "CCS (Type 2)"
+        }
+    }, {
+        "quantity": 1,
+        "current_type": {
+            "Description": "Постоянный ток",
+            "ID": 30,
+            "Title": "DC"
+        },
+        "power_kw": 90,
+        "charger_type": {
+            "Comments": "40 кВт и выше",
+            "IsFastChargeCapable": true,
+            "ID": 3,
+            "Title": "Уровень 3: Высокий (более 40 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "GB-T DC - GB/T 20234.3",
+            "IsDiscontinued": false,
+            "IsObsolete": false,
+            "ID": 1040,
+            "Title": "GB-T DC - GB/T 20234.3"
+        }
+    }, {
+        "quantity": 1,
+        "current_type": {
+            "Description": "Постоянный ток",
+            "ID": 30,
+            "Title": "DC"
+        },
+        "power_kw": 60,
+        "charger_type": {
+            "Comments": "40 кВт и выше",
+            "IsFastChargeCapable": true,
+            "ID": 3,
+            "Title": "Уровень 3: Высокий (более 40 кВт)"
+        },
+        "status_type": {
+            "IsOperational": true,
+            "IsUserSelectable": true,
+            "ID": 50,
+            "Title": "Оперативный"
+        },
+        "connection_type": {
+            "FormalName": "IEC 62196-3 Configuration AA",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 2,
+            "Title": "CHAdeMO"
+        }
+    }]
+}]
