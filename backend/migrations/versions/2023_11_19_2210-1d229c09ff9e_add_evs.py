@@ -1,6 +1,6 @@
 """Add evs
 
-Revision ID: 1d229c09ff9e
+Revision ID: fa40f86a63fb
 Revises: 67abc2db1fb3
 Create Date: 2023-11-19 22:10:07.859107
 
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1d229c09ff9e'
+revision = 'fa40f86a63fb'
 down_revision = '67abc2db1fb3'
 branch_labels = None
 depends_on = None

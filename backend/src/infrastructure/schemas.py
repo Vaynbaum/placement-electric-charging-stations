@@ -1,4 +1,6 @@
+from pydantic import BaseModel
 from pydantic_sqlalchemy import sqlalchemy_to_pydantic
+from pydantic_extra_types.coordinate import Coordinate
 
 from src.database.models import *
 
@@ -17,7 +19,22 @@ class EVStationSchema(sqlalchemy_to_pydantic(EVStation, exclude=["location"])):
     number_points: int | None = None
     external_id: dict | None = None
     cost: str | None = None
-    
+    use_time: float | None = None
+
+    class Config:
+        from_attributes = True
+
+
+class EVStationPredictSchema(BaseModel):
+    coord: Coordinate
+    value: float
+
+
+class ParkingSchema(sqlalchemy_to_pydantic(Parking, exclude=["location"])):
+    city_id: int | None = None
+    address: str | None = None
+    description: str | None = None
+    center: dict | None = None
 
     class Config:
         from_attributes = True

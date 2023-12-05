@@ -9,6 +9,9 @@ from src.infrastructure.repositories import *
 class IUnitOfWork(ABC):
     cities: ICityRepository
     ev_chargers: IEVStationRepository
+    parkings: IParkingRepository
+    populations: IPopulationRepository
+    ev_loads: IEVLoadRepository
 
     @abstractmethod
     async def __aenter__(self):
@@ -35,6 +38,9 @@ class UnitOfWork(IUnitOfWork):
         self.__session: AsyncSession = self.__session_maker()
         self.cities = CityRepository(self.__session)
         self.ev_chargers = EVStationRepository(self.__session)
+        self.parkings = ParkingRepository(self.__session)
+        self.populations = PopulationRepository(self.__session)
+        self.ev_loads = EVLoadRepository(self.__session)
 
         return await super().__aenter__()
 

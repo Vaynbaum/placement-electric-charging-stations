@@ -1,7 +1,8 @@
 <mat-sidenav-container [hasBackdrop]="selectBackdrop()">
   <mat-sidenav #sidenav [disableClose]="!this.settings.isMobile" [mode]="selectModeSidenav()"
     [opened]="!this.settings.isMobile">
-    <app-sidenav-map (selectedCity)="handleSelectCity($event)" (getEVs)="handleGetEVs($event)"></app-sidenav-map>
+    <app-sidenav-map (selectedCity)="handleSelectCity($event)" (getParkingsEvent)="handleGetParkings($event)"
+      (getEVs)="handleGetEVs($event)" (getEVPredictEvent)="handleEVPredict($event)"></app-sidenav-map>
   </mat-sidenav>
 
   <mat-sidenav-content>

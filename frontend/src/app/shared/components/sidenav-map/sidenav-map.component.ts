@@ -6,6 +6,8 @@ import { SelectInput } from '../../models/input.model';
 import { ResponseItems } from '../../models/response.model';
 import { GeoService } from '../../services/geo.service';
 import { InfrastructureService } from '../../services/infrastructure.service';
+import { showMessage } from '../../common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const LOADING_CITY = 'Загрузка городов...';
 const SELECT_CITY = 'Выберите город';
@@ -19,9 +21,12 @@ const MIN_LENGTH_SUBSTR = 2;
 export class SidenavMapComponent {
   cityControl = new FormControl('');
   currentCity: any = null;
+hour = 3;
 
   @Output() selectedCity = new EventEmitter<any>();
   @Output() getEVs = new EventEmitter<any>();
+@Output() getParkingsEvent = new EventEmitter<any>();
+  @Output() getEVPredictEvent = new EventEmitter<any>();
   cityInput: SelectInput = {
     type: 'text',
     label: LOADING_CITY,
@@ -31,18 +36,20 @@ export class SidenavMapComponent {
   };
 
   constructor(
+private _snackBar: MatSnackBar,
     private geoService: GeoService,
     private infrastructureService: InfrastructureService
   ) {}
 
   toggleEV = {
     flag: false,
-    name: 'Отображать заправки',
+    name: 'Существующие заправки',
   };
   toggleParking = {
     flag: false,
-    name: 'Отображать парковки',
+    name: 'Парковки',
   };
+buttonPredictEVName = 'Предложить заправки';
 
   executeAction(slide: any) {
     slide.action(slide);
@@ -53,9 +60,66 @@ export class SidenavMapComponent {
       if (slide.flag) {
         this.infrastructureService
           .GetAllEVStations(this.currentCity.id)
-          .subscribe((evs) => this.getEVs.emit(evs.items));
+          .subscribe(
+            (evs) => {
+              this.getEVs.emit(evs.items);
+            },
+            (err) => {
+              if (err.status == 404)
+                showMessage(
+                  this._snackBar,
+                  'Существующих заправок не найдено 😞'
+                );
+              else
+                showMessage(this._snackBar, 'Не удалось получить заправки 😞');
+            }
+          );
       } else {
         this.getEVs.emit(null);
+      }
+    }
+  }
+getEVPredict() {
+    if (this.currentCity) {
+      showMessage(this._snackBar, 'Идет вычисление...');
+      this.infrastructureService
+        .GetAllPredictEVs(this.currentCity.id, this.hour)
+        .subscribe(
+          (evs: any) => {
+            if (evs.length > 0)
+              showMessage(this._snackBar, 'Вычисление завершено');
+            else
+              showMessage(
+                this._snackBar,
+                'Нет необходимости в новых заправках'
+              );
+            this.getEVPredictEvent.emit(evs);
+          },
+          () => {
+            showMessage(this._snackBar, 'Не удалось вычислить заправки 😞');
+          }
+        );
+    }
+  }
+
+  getParkings(slide: any) {
+    if (this.currentCity) {
+      if (slide.flag) {
+        this.infrastructureService
+          .GetAllParkings(this.currentCity.id)
+          .subscribe(
+            (evs: any) => {
+              this.getParkingsEvent.emit(evs.items);
+            },
+            (err) => {
+              if (err.status == 404)
+                showMessage(this._snackBar, 'Парковки не найдены 😞');
+              else
+                showMessage(this._snackBar, 'Не удалось получить парковки 😞');
+            }
+          );
+      } else {
+        this.getParkingsEvent.emit(null);
       }
     }
   }
@@ -106,8 +170,8 @@ export class SidenavMapComponent {
         !this.currentCity)
     ) {
       this.currentCity = city;
-      this.toggleEV.flag=false;
-      this.toggleParking.flag=false;
+      this.toggleEV.flag = false;
+      this.toggleParking.flag = false;
       this.selectedCity.emit(city);
     }
   }

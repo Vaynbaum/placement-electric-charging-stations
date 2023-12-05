@@ -37,3 +37,12 @@ class CityRepository(GenericSqlRepository[City], ICityRepository):
         stmt = self._add_substr_to_stmt(stmt, City.name, substr)
         stmt = stmt.order_by(City.name)
         return await self._execute_statement_get_all(stmt)
+
+
+class IPopulationRepository(GenericRepository[Population], ABC):
+    pass
+
+    
+class PopulationRepository(GenericSqlRepository[Population], IPopulationRepository):
+    def __init__(self, session: AsyncSession) -> None:
+        super().__init__(session, Population)

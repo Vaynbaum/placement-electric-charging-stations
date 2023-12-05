@@ -14,11 +14,18 @@
   </mat-form-field>
 
   <div class="config-map">
+    <mat-slide-toggle (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
+      {{toggleParking.name}}
+    </mat-slide-toggle>
+
     <mat-slide-toggle (click)="getExistEVs(toggleEV)" [(ngModel)]="toggleEV.flag">
       {{toggleEV.name}}
     </mat-slide-toggle>
 
-    <mat-slide-toggle  [(ngModel)]="toggleParking.flag">
-      {{toggleParking.name}}
-    </mat-slide-toggle>
+    <mat-form-field class="example-full-width">
+      <mat-label>Время использования</mat-label>
+      <input matInput [(ngModel)]="hour" type="number" min="0" max="24" step="1" required
+        placeholder="Введите время использования в часах">
+    </mat-form-field>
+    <button (click)="getEVPredict()" mat-raised-button color="primary">{{buttonPredictEVName}}</button>
   </div>

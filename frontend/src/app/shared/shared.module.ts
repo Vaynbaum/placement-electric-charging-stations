@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatSlideToggleModule,
     RouterModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
   ],
   exports: [
     FormsModule,
@@ -44,8 +47,9 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
   ],
   declarations: [SidenavMapComponent, HeaderComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

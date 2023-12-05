@@ -1,4 +1,4 @@
-from sqlalchemy import JSON, String, Integer, Column, ForeignKey
+from sqlalchemy import JSON, Float, String, Integer, Column, ForeignKey
 from sqlalchemy.orm import relationship
 from geoalchemy2 import Geography
 
@@ -22,6 +22,7 @@ class EVStation(Base):
     submission_status_type = Column(JSON)
     number_points = Column(Integer)
     external_id = Column(JSON)
+    use_time = Column(Float)
 
     region_id = Column(ForeignKey(Region.id))
     city_id = Column(ForeignKey(City.id))
