@@ -14,11 +14,11 @@
   </mat-form-field>
 
   <div class="config-map">
-    <mat-slide-toggle (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
+    <mat-slide-toggle  (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
       {{toggleParking.name}}
     </mat-slide-toggle>
 
-    <mat-slide-toggle (click)="getExistEVs(toggleEV)" [(ngModel)]="toggleEV.flag">
+    <mat-slide-toggle color="primary" (click)="getExistEVs(toggleEV)" [(ngModel)]="toggleEV.flag">
       {{toggleEV.name}}
     </mat-slide-toggle>
 

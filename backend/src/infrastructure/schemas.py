@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from typing import Any, List
+from pydantic import BaseModel, Field
 from pydantic_sqlalchemy import sqlalchemy_to_pydantic
 from pydantic_extra_types.coordinate import Coordinate
 
@@ -38,3 +39,23 @@ class ParkingSchema(sqlalchemy_to_pydantic(Parking, exclude=["location"])):
 
     class Config:
         from_attributes = True
+
+
+class PopulationPS(BaseModel):
+    value: float
+    poly: Any
+
+
+class PolyS(BaseModel):
+    poly: Any
+    load: float = Field(default=0)
+    cluster: int = Field(default=1)
+    can_delete: bool = Field(default=True)
+    is_deleted: bool = Field(default=False)
+    pop: float = Field(default=0)
+
+
+class ClusterS(BaseModel):
+    items: List[PolyS] = []
+    pops: float = Field(default=0)
+    load: float = Field(default=0)

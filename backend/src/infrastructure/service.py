@@ -57,58 +57,63 @@ class InfrastructureService:
                 city = await self.__get_city(city_id)
                 populations = await self.__get_populations(city_id)
                 default_ev_load = await self.__get_default_ev_load(populations)
-
-                parkings = await self.__uow.parkings.get_all(city_id=city_id)
-                l_p = len(parkings) > 0
-                exist_evs = await self.__uow.ev_chargers.get_all(city_id=city_id)
+                parkings, is_exist_parks = await self.__proccess_parking(city_id)
+                exist_evs, is_exist_evs = await self.__proccess_exist_evs(city_id)
 
                 city_proj, geometry_cut = self.__get_city_from_osm(city)
                 transformer = self.__create_transformer(city_proj)
                 polylist = self.__proccess_geoms(geometry_cut.geoms, transformer)
 
-                if l_p:
+                if is_exist_parks:
                     parkings = self.__proccess_parkins(parkings)
                     polylist = self.__proccess_stations_to_park(polylist, parkings)
 
-                if len(exist_evs) > 0:
+                if is_exist_evs:
                     polylist = self.__classification_evs(
                         polylist, exist_evs, default_ev_load
                     )
-                else:
-                    polylist.append(
-                        {
-                            "load": default_ev_load.value,
-                            "class": 1,
-                            "can_delete": False,
-                            "poly": city_proj.centroid,
-                        }
-                    )
 
-                clusters = self.__group_evs(polylist)
-                clusters = self.alg(clusters, populations, hour)
+                clusters = self.__group_evs(
+                    polylist, populations, is_exist_evs, default_ev_load
+                )
+                clusters = self.alg(clusters, hour)
 
-                return self.__proccess_stations(clusters, parkings, l_p)
+                return self.__proccess_stations(clusters, parkings, is_exist_parks)
             except GetAllItemsException as e:
                 raise AnyServiceException(e.message) from e
 
-    def alg(self, clusters: dict, populations, hour: int):
+    def alg(self, clusters: dict[int, ClusterS], hour: int):
         f = True
         while f:
             f = False
-            clusters = self.__add_pops_to_clusters(clusters, populations)
             for cluster in clusters.values():
+                cluster.pops = 0
                 min = 25
                 min_p = None
-                for poly in cluster["items"]:
-                    if poly["is_delete"] == False and poly["can_delete"] == True:
-                        v = poly["load"]
-                        if v < min and v < hour:
-                            min = v
-                            min_p = poly
+                for poly in cluster.items:
+                    if not poly.is_deleted:
+                        cluster.pops += poly.pop
+
+                for poly in cluster.items:
+                    if not poly.is_deleted:
+                        poly.load = cluster.load * poly.pop / cluster.pops
+
+                        if poly.can_delete:
+                            if poly.load < min and poly.load < hour:
+                                min = poly.load
+                                min_p = poly
                 if min_p:
-                    min_p["is_delete"] = True
+                    min_p.is_deleted = True
                     f = True
         return clusters
+
+    async def __proccess_parking(self, city_id: int):
+        parkings = await self.__uow.parkings.get_all(city_id=city_id)
+        return parkings, len(parkings) > 0
+
+    async def __proccess_exist_evs(self, city_id: int):
+        exist_evs = await self.__uow.ev_chargers.get_all(city_id=city_id)
+        return exist_evs, len(exist_evs) > 0
 
     def __get_city_from_osm(self, city):
         city_osm = ox.geocode_to_gdf(city.display_name, which_result=1)
@@ -129,66 +134,50 @@ class InfrastructureService:
         populations = await self.__uow.populations.get_all(city_id=city_id)
         for p in populations:
             loc = to_shape(p.geometry)
-            ps.append({"value": p.value, "poly": loc})
+            pop = PopulationPS(value=p.value, poly=loc)
+            ps.append(pop)
         return ps
 
     async def __get_default_ev_load(self, populations):
         pop_city = self.__sum_pop_city(populations)
         return await self.__uow.ev_loads.get_one(pop_city)
 
-    def __group_evs(self, polylist):
+    def __group_evs(
+        self,
+        polylist: list[PolyS],
+        populations: list[PopulationPS],
+        is_exist_evs: bool,
+        default_ev_load: EVLoad,
+    ):
         clusters = {}
         for p in polylist:
-            cluster = clusters.get(p["class"], None)
-            item = {
-                "poly": p["poly"],
-                "is_delete": False,
-                "can_delete": p["can_delete"],
-                "pop": None,
-            }
+            f = False
+            for population in populations:
+                if population.poly.intersects(p.poly):
+                    p.pop = population.value
+                    f = True
+                    break
+            if f:
+                cluster: ClusterS | None = clusters.get(p.cluster, None)
 
-            if cluster is None:
-                c = {"items": [item]}
-                if not p["can_delete"]:
-                    c["load"] = p["load"]
-                clusters[p["class"]] = c
+                if cluster is None:
+                    cluster = ClusterS(items=[p])
+                    clusters[p.cluster] = cluster
+                else:
+                    cluster.items.append(p)
 
-            else:
-                cluster["items"].append(item)
-                if not p["can_delete"]:
-                    cluster["load"] = p["load"]
-        return clusters
-
-    def __add_pops_to_clusters(self, clusters: dict, populations: list[dict]):
-        for cluster in clusters.values():
-            cluster["populations"] = []
-            cluster["pops"] = 0
-            for poly in cluster["items"]:
-                if poly["is_delete"]:
-                    continue
-                f = True
-                for population in populations:
-                    if population["poly"].intersects(poly["poly"]):
-                        poly["pop"] = population
-                        cluster["populations"].append(population)
-                        f = False
-                        break
-                if f:
-                    poly["is_delete"] = True
-            for p in cluster["populations"]:
-                cluster["pops"] += p["value"]
-
-            for poly in cluster["items"]:
-                if poly["is_delete"]:
-                    continue
-                poly["load"] = cluster["load"] * poly["pop"]["value"] / cluster["pops"]
+                if not is_exist_evs:
+                    cluster.load = default_ev_load.value
+                elif not p.can_delete:
+                    cluster.load = p.load
         return clusters
 
     def __proccess_geoms(self, geoms: list, transformer):
         polylist = []
         for p in geoms:
             p_utm = transform(transformer.transform, p)
-            polylist.append({"poly": p_utm, "class": 1, "can_delete": True})
+            poly = PolyS(poly=p_utm)
+            polylist.append(poly)
         return polylist
 
     def __create_transformer(self, city_proj):
@@ -203,14 +192,16 @@ class InfrastructureService:
         source = Proj(init="epsg:4326")
         return pyproj.Transformer.from_crs(target.crs, source.crs, always_xy=True)
 
-    def __proccess_stations(self, clusters, parkings: list, l_p: int):
+    def __proccess_stations(
+        self, clusters: dict[int, ClusterS], parkings: list[Point], is_exist_parks: bool
+    ):
         stations = []
         for cluster in clusters.values():
-            for p in cluster["items"]:
-                if p["can_delete"] == False or p["is_delete"]:
+            for p in cluster.items:
+                if not p.can_delete or p.is_deleted:
                     continue
-                poly = p["poly"]
-                if l_p:
+                poly = p.poly
+                if is_exist_parks:
                     for park in parkings:
                         if poly.contains(park):
                             coord = Coordinate(latitude=park.y, longitude=park.x)
@@ -220,17 +211,17 @@ class InfrastructureService:
                     )
                 s = EVStationPredictSchema(
                     coord=coord,
-                    value=round(p["load"], 1),
+                    value=round(p.load, 1),
                 )
                 stations.append(s)
         return stations
 
-    def __proccess_stations_to_park(self, polies, parkings):
+    def __proccess_stations_to_park(self, polies: list[PolyS], parkings: list[Point]):
         polylist = []
         drawed_pols = []
 
         for p in polies:
-            poly = p["poly"]
+            poly = p.poly
             for park in parkings:
                 if poly.contains(park):
                     f = True
@@ -238,10 +229,10 @@ class InfrastructureService:
                         if dp.contains(poly.centroid):
                             f = False
                     if f:
-                        polylist.append(poly)
+                        polylist.append(p)
                         drawed_pols.append(poly)
                     break
-        return [{"poly": p, "class": 1} for p in polylist]
+        return polylist
 
     def __proccess_parkins(self, parkings):
         ps = []
@@ -250,7 +241,9 @@ class InfrastructureService:
             ps.append(Point(loc.x, loc.y))
         return ps
 
-    def __classification_evs(self, polylist, exist_evs, default_ev_load: EVLoad):
+    def __classification_evs(
+        self, polylist: list[PolyS], exist_evs: list[EVStation], default_ev_load: EVLoad
+    ):
         classified_points = []
         for i in range(len(exist_evs)):
             ev = exist_evs[i]
@@ -259,7 +252,7 @@ class InfrastructureService:
 
         unclassified_points = []
         for p in polylist:
-            poly = p["poly"]
+            poly = p.poly
             unclassified_points.append((poly.centroid.x, poly.centroid.y))
 
         x_train = np.array([point[:2] for point in classified_points])
@@ -271,23 +264,23 @@ class InfrastructureService:
         predicted_labels = knn.predict(x_test)
 
         for poly, label in zip(polylist, predicted_labels):
-            poly["class"] = label
-            poly["can_delete"] = True
+            poly.cluster = label
+            poly.can_delete = True
 
         for i in range(len(exist_evs)):
             ev = exist_evs[i]
             loc = to_shape(ev.location)
-            e = {
-                "load": ev.use_time if ev.use_time else default_ev_load.value,
-                "poly": loc,
-                "class": i,
-                "can_delete": False,
-            }
+            e = PolyS(
+                load=ev.use_time if ev.use_time else default_ev_load.value,
+                poly=loc,
+                cluster=i,
+                can_delete=False,
+            )
             polylist.append(e)
         return polylist
 
     def __sum_pop_city(self, populations: list[Population]):
         value = 0
         for population in populations:
-            value += population["value"]
+            value += population.value
         return value

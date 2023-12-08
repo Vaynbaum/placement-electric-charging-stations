@@ -14,8 +14,8 @@ export class MapPageComponent implements OnInit {
   constructor(public settings: SettingsService) {}
   selectedCity: any = null;
   currentPolygon: any = null;
-  currentEVs: any[] = [];
-currentParkings: any[] = [];
+  currentEVsCluster: any = null;
+  currentParkingsCluster: any = null;
   currentEVPredict: any[] = [];
 
   defaultPosition = { center: [55.751952, 37.600739] };
@@ -65,10 +65,8 @@ currentParkings: any[] = [];
       this.map?.geoObjects.removeAll();
       this.currentEVPredict = [];
       this.map.geoObjects.add(this.currentPolygon);
-      this.currentParkings.forEach((p) => {
-        //@ts-ignore
-        this.map.geoObjects.add(p);
-      });
+      if (this.currentParkingsCluster)
+        this.map.geoObjects.add(this.currentParkingsCluster);
 
       if (evs) {
         evs.forEach((ev) => {
@@ -85,7 +83,7 @@ currentParkings: any[] = [];
             {
               // blue
               iconColor: '#FF0000',
-              // preset: 'islands#greenCircleDotIcon',
+              preset: 'islands#RedCircleDotIcon',
             }
           );
 
@@ -94,17 +92,21 @@ currentParkings: any[] = [];
         });
       }
 
-      this.currentEVs.forEach((ev) => {
-        //@ts-ignore
-        this.map.geoObjects.add(ev);
-      });
+      if (this.currentEVsCluster)
+        this.map.geoObjects.add(this.currentEVsCluster);
     }
   }
 
   handleGetParkings(parkings: Parking[] | null) {
     if (this.map) {
+      let clusterer = new ymaps.Clusterer({
+        preset: 'islands#invertedYellowClusterIcons',
+        groupByCoordinates: false,
+        clusterDisableClickZoom: false,
+        clusterHideIconOnBalloonOpen: false,
+        geoObjectHideIconOnBalloonOpen: false,
+      });
       this.map?.geoObjects.removeAll();
-      this.currentParkings = [];
       this.map.geoObjects.add(this.currentPolygon);
 
       if (parkings) {
@@ -113,29 +115,31 @@ currentParkings: any[] = [];
             parking.center.coordinates.reverse(),
             {
               balloonContentBody: `<div>
-              <strong>${parking.description}</strong>
+              ${
+                parking.description
+                  ? `<strong>${parking.description}</strong>`
+                  : ''
+              }
               <p>Парковка</p>
             </div>`,
             },
             {
-              // blue
-              iconColor: '#0000FF',
-              preset: 'islands#greenCircleDotIcon',
+              // yellow
+              iconColor: '#ffd54f',
+              preset: 'islands#YellowCircleDotIcon',
             }
           );
-          this.currentParkings.push(polygon);
-          this.map?.geoObjects.add(polygon);
+          clusterer.add(polygon);
         });
       }
-
+      this.currentParkingsCluster = clusterer;
+      this.map?.geoObjects.add(clusterer);
       this.currentEVPredict.forEach((e) => {
         //@ts-ignore
         this.map.geoObjects.add(e);
       });
-      this.currentEVs.forEach((ev) => {
-        //@ts-ignore
-        this.map.geoObjects.add(ev);
-      });
+      if (this.currentEVsCluster)
+        this.map.geoObjects.add(this.currentEVsCluster);
     }
   }
 
@@ -189,12 +193,16 @@ currentParkings: any[] = [];
   handleGetEVs(evs: EVStation[] | null) {
     if (this.map) {
       this.map?.geoObjects.removeAll();
-      this.currentEVs = [];
-      this.map.geoObjects.add(this.currentPolygon);
-this.currentParkings.forEach((p) => {
-        //@ts-ignore
-        this.map.geoObjects.add(p);
+      let clusterer = new ymaps.Clusterer({
+        preset: 'islands#invertedVioletClusterIcons',
+        groupByCoordinates: false,
+        clusterDisableClickZoom: false,
+        clusterHideIconOnBalloonOpen: false,
+        geoObjectHideIconOnBalloonOpen: false,
       });
+      this.map.geoObjects.add(this.currentPolygon);
+      if (this.currentParkingsCluster)
+        this.map.geoObjects.add(this.currentParkingsCluster);
       this.currentEVPredict.forEach((e) => {
         //@ts-ignore
         this.map.geoObjects.add(e);
@@ -208,19 +216,20 @@ this.currentParkings.forEach((p) => {
               balloonContentBody: this.content_exist_ev(ev),
             },
             {
-              // green
-              iconColor: '#008000',
+              // blue
+              iconColor: '#9575cd',
             }
           );
-          this.currentEVs.push(polygon);
-          this.map?.geoObjects.add(polygon);
+          clusterer.add(polygon);
         });
       }
+      this.currentEVsCluster = clusterer;
+      this.map?.geoObjects.add(clusterer);
     }
   }
 
   handleSelectCity(city: FullCity) {
-this.map?.geoObjects.removeAll();
+    this.map?.geoObjects.removeAll();
     if (city.border.type == 'MultiPolygon') {
       //@ts-ignore
       let coords = [];

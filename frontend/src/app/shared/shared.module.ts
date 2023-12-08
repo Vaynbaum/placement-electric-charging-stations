@@ -1,3 +1,4 @@
+import { FooterComponent } from './components/footer/footer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
@@ -41,6 +42,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatIconModule,
     HeaderComponent,
+    FooterComponent,
     SidenavMapComponent,
     MatToolbarModule,
     MatAutocompleteModule,
@@ -50,6 +52,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatCardModule,
     MatSnackBarModule,
   ],
-  declarations: [SidenavMapComponent, HeaderComponent],
+  declarations: [SidenavMapComponent, HeaderComponent, FooterComponent],
 })
 export class SharedModule {}
