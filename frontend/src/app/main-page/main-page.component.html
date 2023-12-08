@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="header">
+        <div class="text-box">
+            <button mat-raised-button color="accent" [routerLink]="['', 'map']">Поехали!</button>
+        </div>
+    </div>
+    <div class="stats_block">
+        <mat-card class="stat_card"><div class="stat_number">8К+</div><div class="stat_info">городов<mat-icon>location_city</mat-icon></div></mat-card>
+        <mat-card class="stat_card"><div class="stat_number">1.4К+</div><div class="stat_info">заправок<mat-icon>local_gas_station</mat-icon> </div></mat-card>
+        <mat-card class="stat_card"><div class="stat_number">189К+</div><div class="stat_info">парковок<mat-icon>local_parking</mat-icon></div></mat-card>
+    </div>
+    <h1>Источники данных</h1>
+    <div class="partners_block">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar src="../../assets/osrm_logo.png">
+                <mat-card-title>Open Street Map</mat-card-title>
+                <mat-card-subtitle [ngStyle]="{'color': 'white'}">Города, парковки</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/osrm_example.png" class="main_card_image"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar src="../../assets/oc_logo.png">
+                <mat-card-title>Open Chargers</mat-card-title>
+                <mat-card-subtitle [ngStyle]="{'color': 'white'}">Электрозаправки</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/oc_example.png" class="main_card_image"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar src="../../assets/yandex_logo.png">
+                <mat-card-title>Яндекс API</mat-card-title>
+                <mat-card-subtitle [ngStyle]="{'color': 'white'}">Карта</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/yandex_example.png" class="main_card_image"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar src="../../assets/worldpop_logo.png">
+                <mat-card-title>WorldPop Hub</mat-card-title>
+                <mat-card-subtitle [ngStyle]="{'color': 'white'}">Плотность населения</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/worldpop_example.png" class="main_card_image"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+    </div>
+    <div class="graphs_block">
+
+    </div>
+</div>

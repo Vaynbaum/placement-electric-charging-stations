@@ -12,13 +12,14 @@ import { environment } from 'src/environments/environment';
 import { GeoService } from './shared/services/geo.service';
 import { ModelPageComponent } from './model-page/model-page.component';
 import { InfrastructureService } from './shared/services/infrastructure.service';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const mapConfig: YaConfig = {
   apikey: environment.API_KEY,
   lang: 'ru_RU',
 };
 @NgModule({
-  declarations: [AppComponent, MapPageComponent, ModelPageComponent],
+  declarations: [AppComponent, MapPageComponent, ModelPageComponent, MainPageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
