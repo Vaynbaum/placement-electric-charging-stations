@@ -21,11 +21,11 @@ const MIN_LENGTH_SUBSTR = 2;
 export class SidenavMapComponent {
   cityControl = new FormControl('');
   currentCity: any = null;
-hour = 3;
+  hour = 3;
 
   @Output() selectedCity = new EventEmitter<any>();
   @Output() getEVs = new EventEmitter<any>();
-@Output() getParkingsEvent = new EventEmitter<any>();
+  @Output() getParkingsEvent = new EventEmitter<any>();
   @Output() getEVPredictEvent = new EventEmitter<any>();
   cityInput: SelectInput = {
     type: 'text',
@@ -36,7 +36,7 @@ hour = 3;
   };
 
   constructor(
-private _snackBar: MatSnackBar,
+    private _snackBar: MatSnackBar,
     private geoService: GeoService,
     private infrastructureService: InfrastructureService
   ) {}
@@ -49,7 +49,7 @@ private _snackBar: MatSnackBar,
     flag: false,
     name: 'Парковки',
   };
-buttonPredictEVName = 'Предложить заправки';
+  buttonPredictEVName = 'Предложить заправки';
 
   executeAction(slide: any) {
     slide.action(slide);
@@ -79,7 +79,7 @@ buttonPredictEVName = 'Предложить заправки';
       }
     }
   }
-getEVPredict() {
+  getEVPredict() {
     if (this.currentCity) {
       showMessage(this._snackBar, 'Идет вычисление...');
       this.infrastructureService
@@ -95,8 +95,12 @@ getEVPredict() {
               );
             this.getEVPredictEvent.emit(evs);
           },
-          () => {
-            showMessage(this._snackBar, 'Не удалось вычислить заправки 😞');
+          (e) => {
+            console.log(e);
+            if (e.error && e.error.detail)
+              showMessage(this._snackBar, e.error.detail);
+            else
+              showMessage(this._snackBar, 'Не удалось вычислить заправки 😞');
           }
         );
     }
@@ -105,6 +109,7 @@ getEVPredict() {
   getParkings(slide: any) {
     if (this.currentCity) {
       if (slide.flag) {
+        showMessage(this._snackBar, 'Идет поиск парковок...');
         this.infrastructureService
           .GetAllParkings(this.currentCity.id)
           .subscribe(

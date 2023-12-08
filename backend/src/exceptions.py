@@ -16,8 +16,7 @@ class ServiceException(BaseAppException):
 
 class AnyServiceException(ServiceException):
     def __init__(self, message: str = ANY_EXCEPTIONS):
-        super().__init__(message)
-        self.code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        super().__init__(message, status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class NotFoundException(ServiceException):

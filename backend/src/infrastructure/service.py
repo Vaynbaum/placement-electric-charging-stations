@@ -119,10 +119,13 @@ class InfrastructureService:
         city_osm = ox.geocode_to_gdf(city.display_name, which_result=1)
         city_proj = ox.project_gdf(city_osm)
         geometry = city_proj["geometry"].iloc[0]
-        geometry_cut = ox.utils_geo._quadrat_cut_geometry(
-            geometry, quadrat_width=GRID_SIZE
-        )
-        return city_proj, geometry_cut
+        try:
+            geometry_cut = ox.utils_geo._quadrat_cut_geometry(
+                geometry, quadrat_width=GRID_SIZE
+            )
+            return city_proj, geometry_cut
+        except Exception as e:
+            raise AnyServiceException(GEOMS_CITY) from e
 
     async def __get_city(self, city_id: int):
         city = await self.__uow.cities.get_by_id(city_id)

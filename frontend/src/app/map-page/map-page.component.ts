@@ -229,7 +229,6 @@ export class MapPageComponent implements OnInit {
   }
 
   handleSelectCity(city: FullCity) {
-    this.map?.geoObjects.removeAll();
     if (city.border.type == 'MultiPolygon') {
       //@ts-ignore
       let coords = [];
@@ -240,19 +239,34 @@ export class MapPageComponent implements OnInit {
       city.border.coordinates = coords;
     }
 
-    const polygon = new ymaps.Polygon(
-      this.buildCoordinates(city.border),
-      {},
-      {
-        fillColor: '#FF000088',
-        strokeColor: '#FF0000FF',
-        opacity: 0.3,
-        strokeWidth: 2,
-      }
-    );
-    this.currentPolygon = polygon;
+    let polygon = null;
+    if (city.border.type == 'Point') {
+      polygon = new ymaps.Placemark(
+        city.border.coordinates.reverse(),
+        {},
+        {
+          // blue
+          iconColor: '#FF000088',
+        }
+      );
+    } else {
+      polygon = new ymaps.Polygon(
+        this.buildCoordinates(city.border),
+        {},
+        {
+          fillColor: '#FF000088',
+          strokeColor: '#FF0000FF',
+          opacity: 0.3,
+          strokeWidth: 2,
+        }
+      );
+    }
+    this.currentPolygon = polygon
+    this.currentEVPredict=[]
 
     if (this.map) {
+      this.currentEVsCluster = null;
+      this.currentParkingsCluster = null;
       this.map.geoObjects.removeAll();
       this.map.geoObjects.add(polygon);
     }
