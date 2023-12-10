@@ -1,118 +1,125 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.go-map {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+
+  button {
+    font-size: 18px;
+    padding: 20px;
+  }
 }
 
 .header {
-    height: 75vh;
-    background-image:
-        linear-gradient(to right bottom,
-            rgba(103, 58, 183, 0.8), rgba(81, 45, 144, 0.6)),
-        url('http://baik-info.ru/sites/default/files/en_grupp_igu_reklama.jpg');
+  height: 75vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(103, 58, 183, 0.8),
+      rgba(81, 45, 144, 0.6)
+    ),
+    url("../../assets/en_group.jpg");
 
-    background-size: cover;
-    background-position: top;
-    position: relative;
+  background-size: cover;
+  background-position: top;
+  position: relative;
 
-    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
 }
 
 .text-box {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 30px;
-    border-bottom: 2px solid white;
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 30px;
+  border-bottom: 2px solid white;
 }
 
 button {
-    width: 200px;
+  width: 200px;
 }
 
 .stats_block {
-    margin: 0 50px;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    row-gap: 50px;
-    column-gap: 30px;
+  margin: 0 50px;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 50px;
+  column-gap: 30px;
 
-    .stat_card {
-        align-items: center;
-        padding: 20px 10px;
-        background-color: rgb(103, 58, 183);
-        color: white;
-        font-weight: 500;
-        font-size: 20px;
-        width: 300px;
-        text-align: center;
-        row-gap: 10px;
-        .stat_number{
-            font-size: 32px;
-        }
-        .stat_info{
-            display: flex;
-            align-items: center;
-            column-gap: 5px;
-        }
+  .stat_card {
+    align-items: center;
+    padding: 20px 10px;
+    background-color: rgb(103, 58, 183);
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    width: 280px;
+    text-align: center;
+    row-gap: 10px;
+    .stat_number {
+      font-size: 32px;
     }
+    .stat_info {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+    }
+  }
 }
 
-.partners_block {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 30px;
+.partners-block {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
 
-    .example-card {
-        max-width: 400px;
-        background-color: rgb(103, 58, 183);
-        color: white;
-    }
+  .source-card {
+    max-width: 400px;
+    background-color: rgb(103, 58, 183);
+    color: white;
+  }
 
-    .example-header-image {
-        background-image: url('https://image.pngaaa.com/613/7674613-middle.png');
-        background-size: cover;
-    }
-
-    .main_card_image{
-        height: 300px;
-    }
+  .main-card-image {
+    height: 300px;
+  }
 }
 
 .graphs_block {
-    display: flex;
-
+  display: flex;
 }
 
-h1{
-    font-size: 32px;
-    max-width: 330px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(81,45,144)
+h1 {
+  font-size: 32px;
+  max-width: 330px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(81, 45, 144);
 }
 
 @media screen and (max-width: 470px) {
-    .example-card {
-        max-width: 300px;
-    }
-    .main_card_image{
-        height: 220px !important;
-    }
+  .source-card {
+    max-width: 300px;
+  }
+  .main-card-image {
+    height: 220px !important;
+  }
 }

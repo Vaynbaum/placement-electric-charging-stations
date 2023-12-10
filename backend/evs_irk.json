@@ -1,4 +1,5 @@
-[{
+[
+    {
         "access": "emobile_only",
         "address": {
             "building_id": "70030076247378167",
@@ -236,7 +237,7 @@
             "id": "70000001041489939",
             "name": "Leaf service, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.268035,
@@ -246,25 +247,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.4,
-            "general_review_count": 8,
-            "general_review_count_with_stars": 10,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -273,52 +255,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "21:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "21:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "21:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "21:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "21:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -326,7 +263,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -2041,25 +1978,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 1.6,
-            "general_review_count": 5,
-            "general_review_count_with_stars": 5,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -2068,52 +1986,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -2122,7 +1995,7 @@
             "source_type": 2
         },
         "temporary_unavailable_atm_services": {},
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -2283,7 +2156,7 @@
             "id": "70000001065116088",
             "name": "Русгидро, ПАО, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.25466,
@@ -2293,19 +2166,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ]
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -2314,52 +2174,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -2367,7 +2182,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -2539,25 +2354,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.5,
-            "general_review_count": 6,
-            "general_review_count_with_stars": 13,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -2566,52 +2362,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -2619,7 +2370,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -2770,7 +2521,7 @@
             "id": "70000001057411877",
             "name": "Чистая энергия, станция электрозарядки автомобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.275908,
@@ -2780,25 +2531,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 5,
-            "general_review_count": 3,
-            "general_review_count_with_stars": 4,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 5,
-            "org_review_count": 3,
-            "org_review_count_with_stars": 4
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -2807,52 +2539,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -2860,7 +2547,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -4615,7 +4302,7 @@
             "id": "70000001051296682",
             "name": "Брк, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.234187,
@@ -4625,25 +4312,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.7,
-            "general_review_count": 6,
-            "general_review_count_with_stars": 8,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 2.7,
-            "org_review_count": 6,
-            "org_review_count_with_stars": 8
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -4652,52 +4320,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -4705,7 +4328,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -4868,7 +4491,7 @@
             "id": "70000001047148564",
             "name": "En+ group, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.270496,
@@ -4878,25 +4501,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3,
-            "general_review_count": 1,
-            "general_review_count_with_stars": 2,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -4905,52 +4509,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -4958,7 +4517,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -5102,7 +4661,7 @@
             "id": "70000001075879640",
             "name": "Ev-time, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.253144,
@@ -5112,19 +4671,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ]
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -5133,52 +4679,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -5186,7 +4687,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -5401,25 +4902,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.3,
-            "general_review_count": 4,
-            "general_review_count_with_stars": 5,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -5428,52 +4910,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -5481,7 +4918,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -5673,7 +5110,7 @@
             "id": "70000001047148564",
             "name": "En+ group, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.290226,
@@ -5683,25 +5120,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.8,
-            "general_review_count": 4,
-            "general_review_count_with_stars": 10,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -5710,52 +5128,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -5763,7 +5136,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -5956,25 +5329,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.8,
-            "general_review_count": 12,
-            "general_review_count_with_stars": 17,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -5983,52 +5337,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -6036,7 +5345,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -7736,25 +7045,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 1,
-            "general_review_count": 2,
-            "general_review_count_with_stars": 2,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -7763,52 +7053,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -7816,7 +7061,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -9571,7 +8816,7 @@
             "id": "70000001051296682",
             "name": "Брк, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.234187,
@@ -9581,25 +8826,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.7,
-            "general_review_count": 6,
-            "general_review_count_with_stars": 8,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 2.7,
-            "org_review_count": 6,
-            "org_review_count_with_stars": 8
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -9608,52 +8834,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -9661,7 +8842,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -11376,25 +10557,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 1.6,
-            "general_review_count": 5,
-            "general_review_count_with_stars": 5,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -11403,52 +10565,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -11457,7 +10574,7 @@
             "source_type": 2
         },
         "temporary_unavailable_atm_services": {},
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -11618,7 +10735,7 @@
             "id": "70000001065116088",
             "name": "Русгидро, ПАО, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.25466,
@@ -11628,19 +10745,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ]
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -11649,52 +10753,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -11702,7 +10761,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -11846,7 +10905,7 @@
             "id": "70000001075879640",
             "name": "Ev-time, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.253144,
@@ -11856,19 +10915,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ]
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -11877,52 +10923,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -11930,7 +10931,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -12088,25 +11089,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.3,
-            "general_review_count": 3,
-            "general_review_count_with_stars": 3,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.3,
-            "org_review_count": 3,
-            "org_review_count_with_stars": 3
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -12115,52 +11097,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "06:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -12168,7 +11105,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -12317,25 +11254,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.8,
-            "general_review_count": 9,
-            "general_review_count_with_stars": 9,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 4.4,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 37
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -12344,52 +11262,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "07:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -12397,7 +11270,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -12568,25 +11441,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 1,
-            "general_review_count": 3,
-            "general_review_count_with_stars": 3,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -12595,52 +11449,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -12648,7 +11457,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -12782,25 +11591,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3.7,
-            "general_review_count": 3,
-            "general_review_count_with_stars": 3,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.5,
-            "org_review_count": 13,
-            "org_review_count_with_stars": 16
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -12809,52 +11599,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -12862,7 +11607,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -13029,25 +11774,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.1,
-            "general_review_count": 16,
-            "general_review_count_with_stars": 16,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -13056,52 +11782,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -13110,7 +11791,7 @@
             "source_type": 2
         },
         "temporary_unavailable_atm_services": {},
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -13351,25 +12032,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3,
-            "general_review_count": 2,
-            "general_review_count_with_stars": 3,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -13378,52 +12040,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -13431,7 +12048,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -13552,19 +12169,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ]
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -13573,52 +12177,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -13626,7 +12185,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     },
     {
@@ -13781,7 +12340,7 @@
             "id": "70000001051510169",
             "name": "Touch, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.35067,
@@ -13791,25 +12350,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.4,
-            "general_review_count": 7,
-            "general_review_count_with_stars": 8,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 2.4,
-            "org_review_count": 7,
-            "org_review_count_with_stars": 8
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -13818,52 +12358,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -13871,7 +12366,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -14025,7 +12520,7 @@
             "id": "70000001051510169",
             "name": "Touch, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 52.35067,
@@ -14035,25 +12530,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.4,
-            "general_review_count": 7,
-            "general_review_count_with_stars": 8,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 2.4,
-            "org_review_count": 7,
-            "org_review_count_with_stars": 8
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -14062,52 +12538,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -14115,7 +12546,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -14274,25 +12705,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.9,
-            "general_review_count": 11,
-            "general_review_count_with_stars": 13,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 4.9,
-            "org_review_count": 11,
-            "org_review_count_with_stars": 13
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -14301,52 +12713,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -14354,7 +12721,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -14484,25 +12851,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.3,
-            "general_review_count": 9,
-            "general_review_count_with_stars": 11,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -14511,52 +12859,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -14564,7 +12867,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -14696,25 +12999,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 3,
-            "general_review_count": 2,
-            "general_review_count_with_stars": 2,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3,
-            "org_review_count": 2,
-            "org_review_count_with_stars": 2
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -14723,52 +13007,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -14776,7 +13015,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -14909,25 +13148,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.5,
-            "general_review_count": 4,
-            "general_review_count_with_stars": 6,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 4.5,
-            "org_review_count": 4,
-            "org_review_count_with_stars": 6
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -14936,52 +13156,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "10:00",
-                    "to": "19:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -14989,7 +13164,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "address": {
@@ -15088,25 +13263,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 5,
-            "general_review_count": 1,
-            "general_review_count_with_stars": 1,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.5,
-            "org_review_count": 13,
-            "org_review_count_with_stars": 16
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -15115,52 +13271,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -15168,7 +13279,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -15306,25 +13417,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 5,
-            "general_review_count": 1,
-            "general_review_count_with_stars": 3,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.5,
-            "org_review_count": 13,
-            "org_review_count_with_stars": 16
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -15333,52 +13425,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -15386,7 +13433,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -15515,7 +13562,7 @@
             "id": "70000001041489939",
             "name": "Leaf service, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 51.891941,
@@ -15525,25 +13572,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 2.3,
-            "general_review_count": 3,
-            "general_review_count_with_stars": 4,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 1.9,
-            "org_review_count": 37,
-            "org_review_count_with_stars": 40
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -15552,52 +13580,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -15605,7 +13588,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }, {
         "access": "emobile_only",
@@ -15734,7 +13717,7 @@
             "id": "70000001047148564",
             "name": "En+ group, станция зарядки электромобилей"
         },
-        "paving_type": "asphalt",
+        
         "poi_category": "electro_station",
         "point": {
             "lat": 51.847519,
@@ -15744,25 +13727,6 @@
         "purpose_code": 86,
         "purpose_name": "Объект",
         "region_id": "11",
-        "reviews": {
-            "general_rating": 4.8,
-            "general_review_count": 5,
-            "general_review_count_with_stars": 8,
-            "is_reviewable": true,
-            "is_reviewable_on_flamp": true,
-            "items": [{
-                    "is_reviewable": true,
-                    "tag": "2gis_reviews"
-                },
-                {
-                    "is_reviewable": true,
-                    "tag": "flamp"
-                }
-            ],
-            "org_rating": 3.9,
-            "org_review_count": 49,
-            "org_review_count_with_stars": 78
-        },
         "rubrics": [{
             "alias": "stancii_dlya_zaryadki_ehlektrotransporta",
             "id": "110320",
@@ -15771,52 +13735,7 @@
             "parent_id": "42903",
             "short_id": 110320
         }],
-        "schedule": {
-            "Fri": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Mon": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sat": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Sun": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Thu": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Tue": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "Wed": {
-                "working_hours": [{
-                    "from": "00:00",
-                    "to": "24:00"
-                }]
-            },
-            "is_24x7": true
-        },
-        "segment_id": "0",
+        
         "stat": {
             "adst": 1608260400,
             "is_advertised": false,
@@ -15824,7 +13743,7 @@
             "rubr": "110320",
             "source_type": 2
         },
-        "timezone_offset": 480,
+        
         "type": "branch"
     }
 ]

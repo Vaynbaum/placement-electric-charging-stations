@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { map, startWith } from 'rxjs';
 import { FullCity } from '../../models/city.model';
 import { SelectInput } from '../../models/input.model';
@@ -22,6 +22,12 @@ export class SidenavMapComponent {
   cityControl = new FormControl('');
   currentCity: any = null;
   hour = 3;
+
+  hourControl = new FormControl(this.hour, [
+    Validators.required,
+    Validators.max(24),
+    Validators.min(0),
+  ]);
 
   @Output() selectedCity = new EventEmitter<any>();
   @Output() getEVs = new EventEmitter<any>();
