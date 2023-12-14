@@ -29,6 +29,8 @@ class EVStationSchema(sqlalchemy_to_pydantic(EVStation, exclude=["location"])):
 class EVStationPredictSchema(BaseModel):
     coord: Coordinate
     value: float
+    pay_back: float | None = None
+    count_cars: int
 
 
 class ParkingSchema(sqlalchemy_to_pydantic(Parking, exclude=["location"])):
@@ -60,4 +62,4 @@ class ClusterS(BaseModel):
     items: List[PolyS] = []
     pops: float = Field(default=0)
     load: float = Field(default=0)
-    last_deleted: PolyS|None = None
+    last_deleted: PolyS | None = None

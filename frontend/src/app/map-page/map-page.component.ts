@@ -5,13 +5,16 @@ import { Component, OnInit } from '@angular/core';
 import { EVStation, EVStationPredict } from '../shared/models/evstation.model';
 import { Parking } from '../shared/models/parking.model';
 
+const COST_DEPT =
+  'Окупить электрозаправку не получится без дополнительного источника финансирования';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map-page.component.html',
   styleUrls: ['./map-page.component.scss'],
 })
 export class MapPageComponent implements OnInit {
-  constructor(public settings: SettingsService) { }
+  constructor(public settings: SettingsService) {}
   selectedCity: any = null;
   currentPolygon: any = null;
   currentEVsCluster: any = null;
@@ -22,7 +25,7 @@ export class MapPageComponent implements OnInit {
   position = this.defaultPosition;
   map: ymaps.Map | null = null;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   selectModeSidenav() {
     if (this.settings.isMobile) return 'over';
@@ -74,8 +77,20 @@ export class MapPageComponent implements OnInit {
             [ev.coord.latitude, ev.coord.longitude],
             {
               balloonContentBody: `<div>
-              <p>Предположительное время работы заправки за день: ${ev.value
-                } ч. / ${Math.round((ev.value / 24) * 100)}%</p>
+              <p>Предположительное время работы заправки за день: ${
+                ev.value
+              } ч. / ${Math.round((ev.value / 24) * 100)}%</p>
+
+              ${
+                ev.pay_back
+                  ? `<p>Предположительное время окупаемости электрозаправки в днях: ${Math.round(ev.pay_back)} </p>`
+                  : COST_DEPT
+              }
+
+              <p>Предположительное количество заряжаемых машин в день: ${
+                ev.count_cars
+              } </p>
+
               <p>Предложенная электрозаправка</p>
             </div>`,
             },
@@ -114,10 +129,11 @@ export class MapPageComponent implements OnInit {
             parking.center.coordinates.reverse(),
             {
               balloonContentBody: `<div>
-              ${parking.description
+              ${
+                parking.description
                   ? `<strong>${parking.description}</strong>`
                   : ''
-                }
+              }
               <p>Парковка</p>
             </div>`,
             },
@@ -144,12 +160,17 @@ export class MapPageComponent implements OnInit {
   displayConnections(connections: any[]) {
     let li = '';
     connections.forEach((connect) => {
-      const img_path = this.defineTypeConnectionImagePath(connect.connection_type.Title)
-      li += `<li style="display: flex; align-items: center; column-gap: 10px"><img src="../../assets/connectors/${img_path}" width="30px" height="30px">Тип: ${connect.connection_type.Title}, ${connect.power_kw} кВт.
-      ${connect?.current_type?.Description
+      const img_path = this.defineTypeConnectionImagePath(
+        connect.connection_type.Title
+      );
+      li += `<li style="display: flex; align-items: center; column-gap: 10px"><img src="../../assets/connectors/${img_path}" width="30px" height="30px">Тип: ${
+        connect.connection_type.Title
+      }, ${connect.power_kw} кВт.
+      ${
+        connect?.current_type?.Description
           ? `(${connect.current_type.Description})`
           : ''
-        }, ${connect.quantity} (количество)
+      }, ${connect.quantity} (количество)
       </li>`;
     });
     return `<ul>Порты:
@@ -158,40 +179,32 @@ export class MapPageComponent implements OnInit {
   }
 
   defineTypeConnectionImagePath(str: string) {
-    let res = 'Unknown.svg'
-    const str_p = str.toLowerCase()
+    let res = 'Unknown.svg';
+    const str_p = str.toLowerCase();
     if (str_p.includes('type 1')) {
       if (str_p.includes('j1772')) {
-        res = 'Type1_J1772.svg'
+        res = 'Type1_J1772.svg';
+      } else if (str_p.includes('ccs')) {
+        res = 'Type1_CCS.svg';
       }
-      else if (str_p.includes('ccs')) {
-        res = 'Type1_CCS.svg'
-      }
-    }
-    else if (str_p.includes('type 2')) {
+    } else if (str_p.includes('type 2')) {
       if (str_p.includes('socket')) {
-        res = 'Type2_socket.svg'
+        res = 'Type2_socket.svg';
+      } else if (str_p.includes('ccs')) {
+        res = 'Type2_CCS.svg';
+      } else if (str_p.includes('tethered')) {
+        res = 'Type2_tethered.svg';
       }
-      else if (str_p.includes('ccs')) {
-        res = 'Type2_CCS.svg'
-      }
-      else if (str_p.includes('tethered')) {
-        res = 'Type2_tethered.svg'
-      }
+    } else if (str_p.includes('schuko')) {
+      res = 'schuko.svg';
+    } else if (str_p.includes('tesla')) {
+      res = 'Tesla-hpwc-model-s.svg';
+    } else if (str_p.includes('chademo')) {
+      res = 'Chademo_type4.svg';
+    } else if (str_p.includes('type 3')) {
+      res = 'Type3c.svg';
     }
-    else if (str_p.includes('schuko')) {
-      res = 'schuko.svg'
-    }
-    else if (str_p.includes('tesla')) {
-      res = 'Tesla-hpwc-model-s.svg'
-    }
-    else if (str_p.includes('chademo')) {
-      res = 'Chademo_type4.svg'
-    }
-    else if (str_p.includes('type 3')) {
-      res = 'Type3c.svg'
-    }
-    return res
+    return res;
   }
 
   content_exist_ev(ev: EVStation) {
@@ -203,18 +216,14 @@ export class MapPageComponent implements OnInit {
       u_t = `Время использования заправки сейчас: ${ev.use_time.toFixed(1)} ч.`;
     }
     return `<div>
-              <strong>${a.Title}</strong>
-              <p>Адрес:  ${a.StateOrProvince ? a.StateOrProvince + ', ' : ''}
-              ${a.Town ? a.Town + ', ' : ''}
-              ${a.AddressLine2 ? a.AddressLine2 + ', ' : ''}
-              ${a.AddressLine1 ? a.AddressLine1 + ', ' : ''}
-              ${a.Postcode ? a.Postcode : ''}
-              </p>
+              <strong>${a.title}</strong>
+              ${a.address ? '<p>Адрес: ' + a.address + '</p>' : ''}
               <p>${ev.cost ? `Стоимость: ${ev.cost}<br/>` : ''}
-              ${ev?.status_type?.Title
-        ? `Статус: ${ev.status_type.Title}<br/>`
-        : ''
-      }
+              ${
+                ev?.status_type?.Title
+                  ? `Статус: ${ev.status_type.Title}<br/>`
+                  : ''
+              }
               ${u_t}
               </p>
               <p>
@@ -295,8 +304,8 @@ export class MapPageComponent implements OnInit {
         }
       );
     }
-    this.currentPolygon = polygon
-    this.currentEVPredict = []
+    this.currentPolygon = polygon;
+    this.currentEVPredict = [];
 
     if (this.map) {
       this.currentEVsCluster = null;

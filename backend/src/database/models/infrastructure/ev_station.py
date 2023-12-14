@@ -3,8 +3,8 @@ from sqlalchemy.orm import relationship
 from geoalchemy2 import Geography
 
 from src.database.base import Base
-from src.database.models.geo.city import City
 from src.database.models.geo.region import Region
+from src.database.models.geo.city import City
 
 
 class EVStation(Base):

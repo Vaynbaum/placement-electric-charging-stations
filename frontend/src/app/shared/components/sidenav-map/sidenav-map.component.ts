@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { map, startWith } from 'rxjs';
 import { FullCity } from '../../models/city.model';
 import { SelectInput } from '../../models/input.model';
@@ -13,6 +13,14 @@ const LOADING_CITY = 'Загрузка городов...';
 const SELECT_CITY = 'Выберите город';
 const MIN_LENGTH_SUBSTR = 2;
 
+type Field = {
+  label: string;
+  controlName: string;
+  min: number;
+  placeholder: string;
+  max: number | null;
+};
+
 @Component({
   selector: 'app-sidenav-map',
   templateUrl: './sidenav-map.component.html',
@@ -21,13 +29,60 @@ const MIN_LENGTH_SUBSTR = 2;
 export class SidenavMapComponent {
   cityControl = new FormControl('');
   currentCity: any = null;
-  hour = 3;
+  paramsAlg: FormGroup = new FormGroup({
+    hour: new FormControl(8, [
+      Validators.required,
+      Validators.max(24),
+      Validators.min(0),
+    ]),
+    power: new FormControl(60, [Validators.required, Validators.min(0)]),
+    cost_service: new FormControl(16, [Validators.required, Validators.min(0)]),
+    cost_ee: new FormControl(4, [Validators.required, Validators.min(0)]),
+    cost_ev: new FormControl(3000000, [Validators.required, Validators.min(0)]),
+    time_charge_hour: new FormControl(0.3, [
+      Validators.required,
+      Validators.min(0),
+      Validators.max(24),
+    ]),
+  });
 
-  hourControl = new FormControl(this.hour, [
-    Validators.required,
-    Validators.max(24),
-    Validators.min(0),
-  ]);
+  paramsField: Field[] = [
+    {
+      label: 'Время использования (ч.)',
+      controlName: 'hour',
+      min: 0,
+      max: 24,
+      placeholder: 'Введите время',
+    },
+    {
+      label: 'Мощность заправки (кВт.)',
+      controlName: 'power',
+      min: 0,
+      max: null,
+      placeholder: 'Введите мощность',
+    },
+    {
+      label: 'Стоимость заправки (р/кВт*ч)',
+      controlName: 'cost_service',
+      min: 0,
+      max: null,
+      placeholder: 'Введите стоимость',
+    },
+    {
+      label: 'Стоимость электрозаправки (р.)',
+      controlName: 'cost_ev',
+      min: 0,
+      max: null,
+      placeholder: 'Введите стоимость',
+    },
+    {
+      label: 'Время зарядки одной машины (ч.)',
+      controlName: 'time_charge_hour',
+      min: 0,
+      max: null,
+      placeholder: 'Введите время',
+    },
+  ];
 
   @Output() selectedCity = new EventEmitter<any>();
   @Output() getEVs = new EventEmitter<any>();
@@ -85,11 +140,24 @@ export class SidenavMapComponent {
       }
     }
   }
+
   getEVPredict() {
     if (this.currentCity) {
       showMessage(this._snackBar, 'Идет вычисление...');
+
+      const { hour, power, cost_service, cost_ee, cost_ev, time_charge_hour } =
+        this.paramsAlg.value;
+
       this.infrastructureService
-        .GetAllPredictEVs(this.currentCity.id, this.hour)
+        .GetAllPredictEVs(
+          this.currentCity.id,
+          hour,
+          power,
+          cost_service,
+          cost_ee,
+          cost_ev,
+          time_charge_hour
+        )
         .subscribe(
           (evs: any) => {
             if (evs.length > 0)

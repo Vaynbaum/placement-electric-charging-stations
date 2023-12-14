@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from geoalchemy2 import Geography
 
 from src.database.models.geo.region import Region
+from src.database.models.geo.growth_car import GrowthCar
 from src.database.base import Base
 
 
@@ -12,6 +13,7 @@ class City(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
     region_id = Column(ForeignKey(Region.id))
+    growth_car_id = Column(ForeignKey(GrowthCar.id))
     location = Column(Geography("POINT"))
     geometry = Column(Geography("POLYGON"))
     type = Column(String(255))
@@ -22,5 +24,7 @@ class City(Base):
     is_top = Column(Boolean, default=False)
     display_name = Column(Text)
     importance = Column(Float)
-
+    cost_ee = Column(Float)
+    
     region = relationship(Region, backref="cities")
+    growth_car = relationship(GrowthCar, backref="cities")

@@ -38,11 +38,21 @@ export class InfrastructureService {
 
   GetAllPredictEVs(
     city_id?: number,
-    hour?: number
+    hour?: number,
+    power?: number,
+    cost_service?: number,
+    cost_ee?: number,
+    cost_ev?: number,
+    time_charge_hour?: number
   ): Observable<ResponseItems<EVStationPredict>> {
     let params: any = {};
     if (city_id) params.city_id = city_id;
     if (hour) params.hour = hour;
+    if (power) params.power = power;
+    if (cost_service) params.cost_service = cost_service;
+    if (cost_ee) params.cost_ee = cost_ee;
+    if (cost_ev) params.cost_ev = cost_ev;
+    if (time_charge_hour) params.time_charge_hour = time_charge_hour;
 
     return this.http.get<ResponseItems<EVStationPredict>>(
       `${URL}/ev_chargers/predict`,

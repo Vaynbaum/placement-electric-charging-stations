@@ -14,7 +14,7 @@
   </mat-form-field>
 
   <div class="config-map">
-    <mat-slide-toggle  (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
+    <mat-slide-toggle (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
       {{toggleParking.name}}
     </mat-slide-toggle>
 
@@ -22,10 +22,25 @@
       {{toggleEV.name}}
     </mat-slide-toggle>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Минимальное время использования</mat-label>
-      <input [formControl]="hourControl" matInput [(ngModel)]="hour" type="number" min="0" max="24" step="1" required
-        placeholder="Введите время использования в часах">
-    </mat-form-field>
-    <button [disabled]="hourControl.invalid" (click)="getEVPredict()" mat-raised-button color="primary">{{buttonPredictEVName}}</button>
+
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Параметры алгоритма
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="paramsAlg">
+          <mat-form-field *ngFor="let field of paramsField" class="example-full-width">
+            <mat-label>{{field.label}}</mat-label>
+            <input [formControlName]="field.controlName" matInput type="number" [min]="field.min" [max]="field.max"
+              step="1" required [placeholder]="field.placeholder">
+          </mat-form-field>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <button [disabled]="paramsAlg.invalid" (click)="getEVPredict()" mat-raised-button
+      color="primary">{{buttonPredictEVName}}</button>
   </div>

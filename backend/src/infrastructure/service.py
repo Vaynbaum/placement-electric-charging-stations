@@ -12,7 +12,7 @@ import pyproj
 from src.database.exceptions import GetAllItemsException
 from src.exceptions import AnyServiceException
 from src.geo.phrases import CITY_NOT_FOUND
-from src.infrastructure.const import ALL_HOURS, GRID_SIZE
+from src.infrastructure.const import *
 from src.infrastructure.mappers import *
 from src.infrastructure.phrases import *
 from src.infrastructure.schemas import *
@@ -50,7 +50,13 @@ class InfrastructureService:
                 raise AnyServiceException(e.message) from e
 
     async def get_ev_chargers_predict(
-        self, city_id: int, hour: int
+        self,
+        city_id: int,
+        hour: int,
+        power: int,
+        cost_service: float,
+        cost_ev: float,
+        time_charge_hour: float,
     ) -> List[EVStationPredictSchema]:
         async with self.__uow:
             try:
@@ -73,12 +79,21 @@ class InfrastructureService:
                         polylist, exist_evs, default_ev_load
                     )
 
+                growth = city.growth_car if city.growth_car else city.region.growth_car
                 clusters = self.__group_evs(
-                    polylist, populations, is_exist_evs, default_ev_load
+                    polylist, populations, is_exist_evs, default_ev_load, growth
                 )
                 clusters = self.alg(clusters, hour)
 
-                return self.__proccess_stations(clusters, parkings, is_exist_parks)
+                return self.__proccess_stations(
+                    clusters,
+                    parkings,
+                    is_exist_parks,
+                    power,
+                    cost_service,
+                    cost_ev,
+                    time_charge_hour,
+                )
             except GetAllItemsException as e:
                 raise AnyServiceException(e.message) from e
 
@@ -164,6 +179,7 @@ class InfrastructureService:
         populations: list[PopulationPS],
         is_exist_evs: bool,
         default_ev_load: EVLoad,
+        growth: GrowthCar,
     ):
         clusters = {}
         for p in polylist:
@@ -183,9 +199,9 @@ class InfrastructureService:
                     cluster.items.append(p)
 
                 if not is_exist_evs:
-                    cluster.load = default_ev_load.value * 2.77
+                    cluster.load = default_ev_load.value * growth.value
                 elif p.is_exist:
-                    cluster.load = p.load * 2.77
+                    cluster.load = p.load * growth.value
         return clusters
 
     def __proccess_geoms(self, geoms: list, transformer):
@@ -209,14 +225,24 @@ class InfrastructureService:
         return pyproj.Transformer.from_crs(target.crs, source.crs, always_xy=True)
 
     def __proccess_stations(
-        self, clusters: dict[int, ClusterS], parkings: list[Point], is_exist_parks: bool
+        self,
+        clusters: dict[int, ClusterS],
+        parkings: list[Point],
+        is_exist_parks: bool,
+        power: int,
+        cost_service: float,
+        cost_ee: float,
+        cost_ev: float,
+        time_charge_hour: float,
     ):
         stations = []
         for cluster in clusters.values():
             for p in cluster.items:
                 if p.is_exist or p.is_deleted:
                     continue
+                pay_back = None
                 poly = p.poly
+
                 if is_exist_parks:
                     for park in parkings:
                         if poly.contains(park):
@@ -225,9 +251,22 @@ class InfrastructureService:
                     coord = Coordinate(
                         latitude=poly.centroid.y, longitude=poly.centroid.x
                     )
+                
+                cost_ee = cost_ee / K_COST_LOSS
+                time_hour = round(p.load, 1)
+                if cost_service > cost_ee:
+                    pay_back_hour = cost_ev / (
+                        (cost_service - cost_ee) * power * time_hour
+                    )
+                    pay_back = pay_back_hour / ALL_HOURS
+
+                count_cars = time_hour // time_charge_hour
+
                 s = EVStationPredictSchema(
                     coord=coord,
-                    value=round(p.load, 1),
+                    value=time_hour,
+                    pay_back=pay_back,
+                    count_cars=count_cars,
                 )
                 stations.append(s)
         return stations

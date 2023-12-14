@@ -16,7 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 @NgModule({
   imports: [
     CommonModule,
@@ -33,6 +33,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RouterModule,
     MatCardModule,
     MatSnackBarModule,
+    MatExpansionModule,
   ],
   exports: [
     FormsModule,
@@ -51,6 +52,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSlideToggleModule,
     MatCardModule,
     MatSnackBarModule,
+    MatExpansionModule,
   ],
   declarations: [SidenavMapComponent, HeaderComponent, FooterComponent],
 })

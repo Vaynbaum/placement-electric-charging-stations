@@ -21,5 +21,10 @@ export class EVStation {
 }
 
 export class EVStationPredict {
-  constructor(public coord: Coordinate, public value: number) {}
+  constructor(
+    public coord: Coordinate,
+    public value: number,
+    public count_cars: number,
+    public pay_back?: number
+  ) {}
 }
