@@ -23,9 +23,9 @@
     </mat-slide-toggle>
 
     <mat-form-field class="example-full-width">
-      <mat-label>Время использования</mat-label>
-      <input matInput [(ngModel)]="hour" type="number" min="0" max="24" step="1" required
+      <mat-label>Минимальное время использования</mat-label>
+      <input [formControl]="hourControl" matInput [(ngModel)]="hour" type="number" min="0" max="24" step="1" required
         placeholder="Введите время использования в часах">
     </mat-form-field>
-    <button (click)="getEVPredict()" mat-raised-button color="primary">{{buttonPredictEVName}}</button>
+    <button [disabled]="hourControl.invalid" (click)="getEVPredict()" mat-raised-button color="primary">{{buttonPredictEVName}}</button>
   </div>

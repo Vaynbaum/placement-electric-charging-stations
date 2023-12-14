@@ -18,7 +18,7 @@ export class MapPageComponent implements OnInit {
   currentParkingsCluster: any = null;
   currentEVPredict: any[] = [];
 
-  defaultPosition = { center: [55.751952, 37.600739] };
+  defaultPosition = { center: [52.289588, 104.280606] };
   position = this.defaultPosition;
   map: ymaps.Map | null = null;
 

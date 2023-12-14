@@ -1,14 +1,14 @@
 [
     {
-    "cost": "14 р/кВт*ч",
+    "cost": "Бесплатно",
     "location": {
         "lat": 45.49678214349742,
         "lon": 32.7199273716888
     },
     "address": {
-        "Title": "ATAN 7",
-        "AddressLine1": "Черноморское сельское поселение",
-        "StateOrProvince": "Крым",
+        "Title": "Григорий",
+        "AddressLine1": "улица Карла Либкнехта, 7, 664000",
+        "StateOrProvince": "Иркутская область",
         "Latitude": 45.49678214349742,
         "Longitude": 32.7199273716888,
         "ContactTelephone1": "89780162216",

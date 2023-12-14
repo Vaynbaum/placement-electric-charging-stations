@@ -51,6 +51,7 @@ class PolyS(BaseModel):
     load: float = Field(default=0)
     cluster: int = Field(default=1)
     can_delete: bool = Field(default=True)
+    is_exist: bool = Field(default=False)
     is_deleted: bool = Field(default=False)
     pop: float = Field(default=0)
 
@@ -59,3 +60,4 @@ class ClusterS(BaseModel):
     items: List[PolyS] = []
     pops: float = Field(default=0)
     load: float = Field(default=0)
+    last_deleted: PolyS|None = None

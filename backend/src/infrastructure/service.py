@@ -88,6 +88,7 @@ class InfrastructureService:
             f = False
             for cluster in clusters.values():
                 cluster.pops = 0
+                o = 0
                 min = 25
                 min_p = None
                 for poly in cluster.items:
@@ -97,6 +98,13 @@ class InfrastructureService:
                 for poly in cluster.items:
                     if not poly.is_deleted:
                         poly.load = cluster.load * poly.pop / cluster.pops
+                        if o > 0 and poly.load + o <= 24:
+                            poly.load += o
+                            o = 0
+                        if poly.load >= 24:
+                            poly.can_delete = False
+                            o = poly.load - 24
+                            poly.load = 24
 
                         if poly.can_delete:
                             if poly.load < min and poly.load < hour:
@@ -105,6 +113,11 @@ class InfrastructureService:
                 if min_p:
                     min_p.is_deleted = True
                     f = True
+                    cluster.last_deleted = min_p
+                if o > 0:
+                    cluster.last_deleted.is_deleted = False
+                    cluster.last_deleted.can_delete = False
+                    cluster.last_deleted = None
         return clusters
 
     async def __proccess_parking(self, city_id: int):
@@ -170,9 +183,9 @@ class InfrastructureService:
                     cluster.items.append(p)
 
                 if not is_exist_evs:
-                    cluster.load = default_ev_load.value
-                elif not p.can_delete:
-                    cluster.load = p.load
+                    cluster.load = default_ev_load.value * 2.77
+                elif p.is_exist:
+                    cluster.load = p.load * 2.77
         return clusters
 
     def __proccess_geoms(self, geoms: list, transformer):
@@ -201,7 +214,7 @@ class InfrastructureService:
         stations = []
         for cluster in clusters.values():
             for p in cluster.items:
-                if not p.can_delete or p.is_deleted:
+                if p.is_exist or p.is_deleted:
                     continue
                 poly = p.poly
                 if is_exist_parks:
@@ -278,6 +291,7 @@ class InfrastructureService:
                 poly=loc,
                 cluster=i,
                 can_delete=False,
+                is_exist=True,
             )
             polylist.append(e)
         return polylist
