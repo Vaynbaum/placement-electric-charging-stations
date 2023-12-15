@@ -34,16 +34,25 @@ mat-sidenav-content,
 .container-map {
   padding: $paddingValue;
   border-radius: $borderRadiusValue;
+  height: 90vh;
 }
 
-@media (min-width: $widthMobile) {
-  .container-map {
-    height: $widthContainerMapMobile;
+@media screen and (max-width: 770px){
+  .container-map{
+    height: 83vh;
+    padding: 0px 20px;
+    padding-bottom: 20px;
   }
-}
-
-@media (min-width: $widthpTablet) {
-  .container-map {
-    height: $widthContainerMapPC;
+  .menu{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  .mat-mdc-fab, .mat-mdc-mini-fab {
+    box-shadow: none;
+  }
+  mat-sidenav-content {
+    align-items: flex-start;
   }
 }
