@@ -13,7 +13,21 @@ img{
 }
 
 mat-card{
-    width: 70%;
+    width: 50%;
+}
+
+ul{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    background: white;
+    li{
+        padding: 2px;
+    }
+}
+
+.last_img{
+    max-width: 400px;
+    align-self: center;
 }
 
 @media screen and (max-width: 630px){
