@@ -1,0 +1,13 @@
+@import "../../../../styles.scss";
+
+mat-form-field {
+  width: 100%;
+}
+
+.config-map {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+
+

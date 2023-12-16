@@ -1,0 +1,46 @@
+  <mat-form-field>
+    <mat-label>{{cityInput.label}}</mat-label>
+    <input type="text" (keydown)="onKeydown($event)" (keyup)="onKeyup(cityInput)" [placeholder]="cityInput.placeholder"
+      matInput [formControl]="cityControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <ng-container *ngFor="let city of cityInput.values | async">
+        <mat-option [value]="city.name" (click)="selectCity(city)">
+          <span>{{city.name}}</span>
+          <small *ngIf="city.region"> ({{city.region.name}})</small>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+    <mat-icon matSuffix>location_city</mat-icon>
+  </mat-form-field>
+
+  <div class="config-map">
+    <mat-slide-toggle (click)="getParkings(toggleParking)" [(ngModel)]="toggleParking.flag">
+      {{toggleParking.name}}
+    </mat-slide-toggle>
+
+    <mat-slide-toggle color="primary" (click)="getExistEVs(toggleEV)" [(ngModel)]="toggleEV.flag">
+      {{toggleEV.name}}
+    </mat-slide-toggle>
+
+
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Параметры алгоритма
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="paramsAlg">
+          <mat-form-field *ngFor="let field of paramsField" class="example-full-width">
+            <mat-label>{{field.label}}</mat-label>
+            <input [formControlName]="field.controlName" matInput type="number" [min]="field.min" [max]="field.max"
+              step="1" required [placeholder]="field.placeholder">
+          </mat-form-field>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <button [disabled]="paramsAlg.invalid" (click)="getEVPredict()" mat-raised-button
+      color="primary">{{buttonPredictEVName}}</button>
+  </div>

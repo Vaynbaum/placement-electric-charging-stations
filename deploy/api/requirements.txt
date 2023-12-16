@@ -1,0 +1,16 @@
+fastapi
+gunicorn
+asyncpg
+pydantic-sqlalchemy
+python-dotenv
+requests
+python-multipart
+fastapi-cache2[redis]
+redis
+alembic
+geoalchemy2
+shapely
+geodaisy
+uvicorn[standard]
+osmnx
+scikit-learn

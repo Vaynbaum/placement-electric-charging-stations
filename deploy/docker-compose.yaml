@@ -1,0 +1,44 @@
+version: "3.6"
+
+services:
+  ev_front:
+    image: ev_front
+    build: ./front
+    container_name: ev_front
+    restart: always
+    networks:
+      - ev_microservices
+    ports:
+      - 4201:4201
+
+  ev_proxy_service:
+    image: ev_proxy_service
+    build: ./ng
+    container_name: ev_proxy_service
+    volumes:
+      - ./ng/nginx.conf:/etc/nginx.conf
+    networks:
+      - ev_microservices
+    ports:
+      - 80:8080
+
+  ev_api_service:
+    image: ev_api_service
+    build: ./api
+    container_name: ev_api_service
+    restart: always
+    env_file: 
+      - .env
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+    networks:
+      - ev_microservices
+  
+
+networks:
+  ev_microservices:
+    driver: bridge
+
+  
