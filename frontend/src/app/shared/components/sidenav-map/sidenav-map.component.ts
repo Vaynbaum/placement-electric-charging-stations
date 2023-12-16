@@ -29,24 +29,32 @@ type Field = {
 export class SidenavMapComponent {
   cityControl = new FormControl('');
   currentCity: any = null;
+
   paramsAlg: FormGroup = new FormGroup({
     hour: new FormControl(8, [
       Validators.required,
       Validators.max(24),
       Validators.min(0),
     ]),
+    year: new FormControl(new Date().getFullYear(), [
+      Validators.required,
+      Validators.max(2100),
+      Validators.min(new Date().getFullYear()),
+    ]),
+  });
+
+  paramsEco: FormGroup = new FormGroup({
     power: new FormControl(60, [Validators.required, Validators.min(0)]),
     cost_service: new FormControl(16, [Validators.required, Validators.min(0)]),
-    cost_ee: new FormControl(4, [Validators.required, Validators.min(0)]),
     cost_ev: new FormControl(3000000, [Validators.required, Validators.min(0)]),
-    time_charge_hour: new FormControl(0.3, [
+    time_charge_hour: new FormControl(0.5, [
       Validators.required,
       Validators.min(0),
       Validators.max(24),
     ]),
   });
 
-  paramsField: Field[] = [
+  paramsFieldAlg: Field[] = [
     {
       label: 'Время использования (ч.)',
       controlName: 'hour',
@@ -54,6 +62,16 @@ export class SidenavMapComponent {
       max: 24,
       placeholder: 'Введите время',
     },
+    {
+      label: 'Год проектирования',
+      controlName: 'year',
+      min: new Date().getFullYear(),
+      max: 2100,
+      placeholder: 'Введите год',
+    },
+  ];
+
+  paramsFieldEco: Field[] = [
     {
       label: 'Мощность заправки (кВт.)',
       controlName: 'power',
@@ -145,16 +163,16 @@ export class SidenavMapComponent {
     if (this.currentCity) {
       showMessage(this._snackBar, 'Идет вычисление...');
 
-      const { hour, power, cost_service, cost_ee, cost_ev, time_charge_hour } =
-        this.paramsAlg.value;
-
+      const { hour, year } = this.paramsAlg.value;
+      const { power, cost_service, cost_ev, time_charge_hour } =
+        this.paramsEco.value;
       this.infrastructureService
         .GetAllPredictEVs(
           this.currentCity.id,
           hour,
+          year,
           power,
           cost_service,
-          cost_ee,
           cost_ev,
           time_charge_hour
         )

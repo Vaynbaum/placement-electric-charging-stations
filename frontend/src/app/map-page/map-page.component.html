@@ -7,15 +7,12 @@
 
   <mat-sidenav-content>
     <div class=" menu">
-      <button mat-button *ngIf="this.settings.isMobile" (click)="sidenav.toggle()">
+      <button mat-mini-fab color="primary" *ngIf="this.settings.isMobile" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
     <div class="container-map">
       <ya-map #map [center]="position.center" [zoom]="12" [state]="{controls: []}" (ready)="onMapReady($event)">
-        <!-- <ya-placemark *ngFor="let placemark of placemarks" [geometry]="placemark.geometry"
-          [properties]="placemark.properties" [options]="placemark.options">
-        </ya-placemark> -->
       </ya-map>
     </div>
 

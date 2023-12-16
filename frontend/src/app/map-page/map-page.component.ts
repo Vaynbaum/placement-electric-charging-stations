@@ -77,21 +77,19 @@ export class MapPageComponent implements OnInit {
             [ev.coord.latitude, ev.coord.longitude],
             {
               balloonContentBody: `<div>
-              <p>Предположительное время работы заправки за день: ${
-                ev.value
-              } ч. / ${Math.round((ev.value / 24) * 100)}%</p>
+              <p>Время работы заправки за день: ${ev.value} ч. / ${Math.round(
+                (ev.value / 24) * 100
+              )}%</p>
 
               ${
                 ev.pay_back
-                  ? `<p>Предположительное время окупаемости электрозаправки в днях: ${Math.round(ev.pay_back)} </p>`
+                  ? `<p>Срок окупаемости электрозаправки: ${ev.pay_back} г. </p>`
                   : COST_DEPT
               }
 
-              <p>Предположительное количество заряжаемых машин в день: ${
-                ev.count_cars
-              } </p>
+              <p>Количество заряжаемых машин в день: ${ev.count_cars} </p>
 
-              <p>Предложенная электрозаправка</p>
+              <p>Предложенная электрозаправка (все значения являются расчетными)</p>
             </div>`,
             },
             {

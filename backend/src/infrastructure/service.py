@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 import osmnx as ox
 from pyproj import Proj, transform
@@ -53,6 +54,7 @@ class InfrastructureService:
         self,
         city_id: int,
         hour: int,
+        year: int,
         power: int,
         cost_service: float,
         cost_ev: float,
@@ -80,8 +82,9 @@ class InfrastructureService:
                     )
 
                 growth = city.growth_car if city.growth_car else city.region.growth_car
+                cost_ee = city.cost_ee if city.cost_ee else city.region.cost_ee
                 clusters = self.__group_evs(
-                    polylist, populations, is_exist_evs, default_ev_load, growth
+                    polylist, populations, is_exist_evs, default_ev_load, growth, year
                 )
                 clusters = self.alg(clusters, hour)
 
@@ -91,6 +94,7 @@ class InfrastructureService:
                     is_exist_parks,
                     power,
                     cost_service,
+                    cost_ee,
                     cost_ev,
                     time_charge_hour,
                 )
@@ -129,7 +133,7 @@ class InfrastructureService:
                     min_p.is_deleted = True
                     f = True
                     cluster.last_deleted = min_p
-                if o > 0:
+                if o > 0 and cluster.last_deleted:
                     cluster.last_deleted.is_deleted = False
                     cluster.last_deleted.can_delete = False
                     cluster.last_deleted = None
@@ -180,7 +184,9 @@ class InfrastructureService:
         is_exist_evs: bool,
         default_ev_load: EVLoad,
         growth: GrowthCar,
+        year: int,
     ):
+        level = year - datetime.now().year
         clusters = {}
         for p in polylist:
             f = False
@@ -199,9 +205,9 @@ class InfrastructureService:
                     cluster.items.append(p)
 
                 if not is_exist_evs:
-                    cluster.load = default_ev_load.value * growth.value
+                    cluster.load = default_ev_load.value * (growth.value**level)
                 elif p.is_exist:
-                    cluster.load = p.load * growth.value
+                    cluster.load = p.load * (growth.value**level)
         return clusters
 
     def __proccess_geoms(self, geoms: list, transformer):
@@ -213,14 +219,24 @@ class InfrastructureService:
         return polylist
 
     def __create_transformer(self, city_proj):
-        result = re.findall(r"\+(.*?)=([\w\d]+)", city_proj.crs.srs)
-        data = {}
-        for key, value in result:
-            data[key] = value
+        if "+" in city_proj.crs.srs:
+            result = re.findall(r"\+(.*?)=([\w\d]+)", city_proj.crs.srs)
+            data = {}
+            for key, value in result:
+                data[key] = value
 
-        target = Proj(
-            proj=data.get("proj"), zone=int(data.get("zone")), ellps=data.get("ellps")
-        )
+            proj = data.get("proj", None)
+            zone = data.get("zone", None)
+            ellps = data.get("ellps", None)
+
+            if proj and zone and ellps:
+                target = Proj(proj=proj, zone=int(zone), ellps=ellps)
+        else:
+            if "EPSG" in city_proj.crs.srs:
+                target = Proj(init=city_proj.crs.srs)
+            else:
+                print(city_proj.crs.srs)
+                raise AnyServiceException(CRS_SRS_INVALID) from None
         source = Proj(init="epsg:4326")
         return pyproj.Transformer.from_crs(target.crs, source.crs, always_xy=True)
 
@@ -251,14 +267,12 @@ class InfrastructureService:
                     coord = Coordinate(
                         latitude=poly.centroid.y, longitude=poly.centroid.x
                     )
-                
+
                 cost_ee = cost_ee / K_COST_LOSS
                 time_hour = round(p.load, 1)
                 if cost_service > cost_ee:
-                    pay_back_hour = cost_ev / (
-                        (cost_service - cost_ee) * power * time_hour
-                    )
-                    pay_back = pay_back_hour / ALL_HOURS
+                    pay_back = cost_ev / ((cost_service - cost_ee) * power * time_hour)
+                    pay_back = round(pay_back / DAY_IN_YEAR, 1)
 
                 count_cars = time_hour // time_charge_hour
 
