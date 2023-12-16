@@ -7,6 +7,7 @@ import { EVStation, EVStationPredict } from '../models/evstation.model';
 import { Parking } from '../models/parking.model';
 
 const URL = `${environment.DB_URL}/infrastructure`;
+const URL_P = `${environment.PREDICT_URL}/infrastructure`;
 
 @Injectable({
   providedIn: 'root',
@@ -55,10 +56,9 @@ export class InfrastructureService {
     if (time_charge_hour) params.time_charge_hour = time_charge_hour;
 
     return this.http.get<ResponseItems<EVStationPredict>>(
-      `${URL}/ev_chargers/predict`,
+      `${URL_P}/ev_chargers/predict`,
       {
         params: { ...params },
-        headers: new HttpHeaders({ timeout: `${1200000}` }),
       }
     );
   }

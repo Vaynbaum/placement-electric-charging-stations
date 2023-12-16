@@ -22,6 +22,14 @@ services:
     ports:
       - 80:8080
 
+  ev_redis_service:
+    image: redis:latest
+    container_name: ev_redis_service
+    networks:
+      - ev_microservices
+    ports:
+      - "6380:6379"
+
   ev_api_service:
     image: ev_api_service
     build: ./api
@@ -33,9 +41,26 @@ services:
       - "8000:8000"
     expose:
       - 8000
+    depends_on:
+      - ev_redis_service
     networks:
       - ev_microservices
   
+  ev_predict_service:
+    image: ev_predict_service
+    build: ./predict
+    container_name: ev_predict_service
+    restart: always
+    env_file: 
+      - .env
+    ports:
+      - "8001:8001"
+    expose:
+      - 8001
+    depends_on:
+      - ev_redis_service
+    networks:
+      - ev_microservices
 
 networks:
   ev_microservices:
