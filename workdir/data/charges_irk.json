@@ -1,0 +1,35 @@
+[{
+    "address": {
+        "name": "Григорий",
+        "address": "улица Карла Либкнехта, 7, Иркутск, Иркутская область, Россия, 664000"
+    },
+    "location": {
+        "y": 52.287847,
+        "x": 104.294216
+    },
+    "cost": "Бесплатно",
+    "usage_time": 0,
+    "city_id": 1391,
+    "region_id": 6,
+    "status_type": {
+        "IsOperational": true,
+        "IsUserSelectable": true,
+        "ID": 50,
+        "Title": "Работает"
+    },
+    "сonnections": [{
+        "quantity": 1,
+        "connection_type": {
+            "FormalName": "SAE J1772-2009",
+            "IsDiscontinued": null,
+            "IsObsolete": null,
+            "ID": 1,
+            "Title": "Type 1 (J1772)"
+        },
+        "current_type": {
+            "Description": "Переменный ток - однофазный",
+            "ID": 10,
+            "Title": "AC (Однофазный)"
+        }
+    }]
+}]

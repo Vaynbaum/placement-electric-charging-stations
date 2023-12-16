@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ResponseItems } from '../models/response.model';
@@ -39,6 +39,7 @@ export class InfrastructureService {
   GetAllPredictEVs(
     city_id?: number,
     hour?: number,
+    year?: number,
     power?: number,
     cost_service?: number,
     cost_ev?: number,
@@ -47,6 +48,7 @@ export class InfrastructureService {
     let params: any = {};
     if (city_id) params.city_id = city_id;
     if (hour) params.hour = hour;
+    if (year) params.year = year;
     if (power) params.power = power;
     if (cost_service) params.cost_service = cost_service;
     if (cost_ev) params.cost_ev = cost_ev;
@@ -56,6 +58,7 @@ export class InfrastructureService {
       `${URL}/ev_chargers/predict`,
       {
         params: { ...params },
+        headers: new HttpHeaders({ timeout: `${1200000}` }),
       }
     );
   }

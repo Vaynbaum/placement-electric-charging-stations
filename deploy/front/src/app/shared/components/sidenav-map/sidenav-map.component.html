@@ -32,7 +32,22 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <form [formGroup]="paramsAlg">
-          <mat-form-field *ngFor="let field of paramsField" class="example-full-width">
+          <mat-form-field *ngFor="let field of paramsFieldAlg" class="example-full-width">
+            <mat-label>{{field.label}}</mat-label>
+            <input [formControlName]="field.controlName" matInput type="number" [min]="field.min" [max]="field.max"
+              step="1" required [placeholder]="field.placeholder">
+          </mat-form-field>
+        </form>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Параметры экономики
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="paramsEco">
+          <mat-form-field *ngFor="let field of paramsFieldEco" class="example-full-width">
             <mat-label>{{field.label}}</mat-label>
             <input [formControlName]="field.controlName" matInput type="number" [min]="field.min" [max]="field.max"
               step="1" required [placeholder]="field.placeholder">
