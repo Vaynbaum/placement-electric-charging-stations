@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 import osmnx as ox
 from pyproj import Proj, transform
@@ -53,6 +54,7 @@ class InfrastructureService:
         self,
         city_id: int,
         hour: int,
+        year: int,
         power: int,
         cost_service: float,
         cost_ev: float,
@@ -67,7 +69,7 @@ class InfrastructureService:
                 exist_evs, is_exist_evs = await self.__proccess_exist_evs(city_id)
 
                 city_proj, geometry_cut = self.__get_city_from_osm(city)
-                transformer = self.__create_transformer(city_proj)          
+                transformer = self.__create_transformer(city_proj)
                 polylist = self.__proccess_geoms(geometry_cut.geoms, transformer)
 
                 if is_exist_parks:
@@ -82,7 +84,7 @@ class InfrastructureService:
                 growth = city.growth_car if city.growth_car else city.region.growth_car
                 cost_ee = city.cost_ee if city.cost_ee else city.region.cost_ee
                 clusters = self.__group_evs(
-                    polylist, populations, is_exist_evs, default_ev_load, growth
+                    polylist, populations, is_exist_evs, default_ev_load, growth, year
                 )
                 clusters = self.alg(clusters, hour)
 
@@ -131,7 +133,7 @@ class InfrastructureService:
                     min_p.is_deleted = True
                     f = True
                     cluster.last_deleted = min_p
-                if o > 0:
+                if o > 0 and cluster.last_deleted:
                     cluster.last_deleted.is_deleted = False
                     cluster.last_deleted.can_delete = False
                     cluster.last_deleted = None
@@ -182,7 +184,9 @@ class InfrastructureService:
         is_exist_evs: bool,
         default_ev_load: EVLoad,
         growth: GrowthCar,
+        year: int,
     ):
+        level = year - datetime.now().year
         clusters = {}
         for p in polylist:
             f = False
@@ -201,9 +205,9 @@ class InfrastructureService:
                     cluster.items.append(p)
 
                 if not is_exist_evs:
-                    cluster.load = default_ev_load.value * growth.value
+                    cluster.load = default_ev_load.value * (growth.value**level)
                 elif p.is_exist:
-                    cluster.load = p.load * growth.value
+                    cluster.load = p.load * (growth.value**level)
         return clusters
 
     def __proccess_geoms(self, geoms: list, transformer):
@@ -229,7 +233,6 @@ class InfrastructureService:
                 target = Proj(proj=proj, zone=int(zone), ellps=ellps)
         else:
             if "EPSG" in city_proj.crs.srs:
-                print(city_proj.crs.srs)
                 target = Proj(init=city_proj.crs.srs)
             else:
                 print(city_proj.crs.srs)

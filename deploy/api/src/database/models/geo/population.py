@@ -1,4 +1,4 @@
-from sqlalchemy import Float, ForeignKey, String, Integer, Text, Column
+from sqlalchemy import Float, ForeignKey, Integer, Column
 from geoalchemy2 import Geography
 from sqlalchemy.orm import relationship
 
