@@ -4,6 +4,6 @@
 ---
 
 ## Как это выглядит
+<img width="600" src="https://github.com/user-attachments/assets/afa1a47e-a966-44af-8a3c-22bd2e9e6d44">
 
-![image](https://github.com/user-attachments/assets/afa1a47e-a966-44af-8a3c-22bd2e9e6d44)
 
